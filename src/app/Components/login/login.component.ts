@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from './../../Services/auth.service';
+import { UserService } from './../../Services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,13 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-	public form: FormGroup;
+	  public form: FormGroup;
 
-  	constructor(public formBuilder: FormBuilder, public authService: AuthService, private router: Router) {
-
+  	constructor(public formBuilder: FormBuilder, public userService: UserService, private router: Router) {
   		this.form = this.formBuilder.group({
-  			mail: ['', Validators.required],
-  			clave: ['', Validators.required]
+  			email: ['', Validators.required],
+  			password: ['', Validators.required]
   		});
 
   	}
@@ -25,10 +24,9 @@ export class LoginComponent implements OnInit {
   	}
 
   	public tryLogin(){
-
-  		const mail: string = this.form.get('mail').value;
-    	const clave: string = this.form.get('clave').value;
-    	this.authService.login(mail, clave);
+  		const email: string = this.form.get('email').value;
+    	const password: string = this.form.get('password').value;
+    	this.userService.userLogin(email, password);
   	}
 
 }

@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { RegisterComponent } from './Components/register/register.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

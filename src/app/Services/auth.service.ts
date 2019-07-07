@@ -12,16 +12,16 @@ export class AuthService {
 
 	@Output() mail = new EventEmitter<String>();
 
-	constructor(public afa: AngularFireAuth, public afs: AngularFirestore, public router: Router) {}
+	constructor(public fireAuth: AngularFireAuth, public fireStore: AngularFirestore, public router: Router) {}
 
-	login(mail: string, clave: string) {
+	signIn(email: string, password: string) {
 		let usuario;
-		this.afa.auth.signInWithEmailAndPassword(mail, clave).then(value => {
+		this.fireAuth.auth.signInWithEmailAndPassword(email, password).then(value => {
 			console.log('Logueo correcto!');
-			this.afs.collection('usuarios').snapshotChanges().subscribe((res) => {
+			this.fireStore.collection('usuarios').snapshotChanges().subscribe((res) => {
 				res.forEach(r => {
 					usuario = r.payload.doc.data();
-					if (usuario["mail"] == mail) {
+					if (usuario["email"] == email) {
 						localStorage.setItem("token", JSON.stringify(usuario));
 						this.router.navigate(['/Dashboard']);
 					}
@@ -32,5 +32,17 @@ export class AuthService {
 		.catch(e => {
 			console.log('Error, algo fallo!', e.message);
 		});
+	}
+
+	signUp(email: string, password: string) {
+		this.fireAuth
+	      .auth
+	      .createUserWithEmailAndPassword(email, password)
+	      .then(value => {
+	        console.log('Registro correcto!', value);
+	      })
+	      .catch(err => {
+	        console.log('Error, algo fallo!',err.message);
+	      });    
 	}
 }
