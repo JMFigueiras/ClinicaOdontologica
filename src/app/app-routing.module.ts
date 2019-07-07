@@ -9,7 +9,7 @@ import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.
 //const routes: Routes = [];
 
 const routes: Routes = [
-  { path: '', redirectTo: 'Login', pathMatch: 'full' },
+  { path: '', redirectTo: 'DentistShift', pathMatch: 'full' },
   { path: 'Login', component: LoginComponent },
   { path: 'Register', component: RegisterComponent },
   { path: 'Dashboard', component: DashboardComponent },

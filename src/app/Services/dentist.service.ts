@@ -5,29 +5,35 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFireUploadTask } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 
+import { User } from './../Entities/user';
+
 @Injectable({
   providedIn: 'root'
 })
 export class DentistService {
 
+	public dentists : Array<User> = new Array<User>();
+
   	constructor(private fireStore: AngularFirestore, private fireStorage: AngularFireStorage, private authService:AuthService) { }
 
-
-  	public returnAll(){
-  		let user;
-  		let users: Array<string>;
+//: Observable<User[]>
+  	public returnAll() {
+  		let user : User;
 
 		this.fireStore.collection('users').snapshotChanges().subscribe((res) => {
 			res.forEach(r => {
-				user = r.payload.doc.data();
+				user = new User(r.payload.doc.data());
 				if (user["type"] == "Especialista") {
+
 					console.log(user["lastName"]);
-					users.push(user["lastName"].toString());
+
+					console.log(this.dentists.push(user));
+					//this.users.push(user["lastName"]);
 				}
 			})
 		});
 
-		return users;
+		return this.dentists;
   	}
 
   	/*public userLogin(email: string, password: string, type: string){
