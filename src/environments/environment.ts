@@ -6,7 +6,13 @@ export const environment = {
   production: false,
 
   firebase: {
- 
+    apiKey: "AIzaSyD3yUj1fY-IPrtUxdkmTuftJFRs8sktIRM",
+    authDomain: "tpfigueiras.firebaseapp.com",
+    databaseURL: "https://tpfigueiras.firebaseio.com",
+    projectId: "tpfigueiras",
+    storageBucket: "tpfigueiras.appspot.com",
+    messagingSenderId: "508505291147",
+    appId: "1:508505291147:web:cf525ce197d33499"
   }
 };
 

@@ -16,6 +16,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RegisterComponent } from './Components/register/register.component';
     LoginComponent,
     DashboardComponent,
     NavbarComponent,
-    RegisterComponent
+    RegisterComponent,
+    DentistShiftComponent
   ],
   imports: [
     BrowserModule,

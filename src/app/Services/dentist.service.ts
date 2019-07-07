@@ -3,15 +3,34 @@ import { AuthService } from './auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFireUploadTask } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class DentistService {
 
   	constructor(private fireStore: AngularFirestore, private fireStorage: AngularFireStorage, private authService:AuthService) { }
 
-  	public userLogin(email: string, password: string, type: string){
+
+  	public returnAll(){
+  		let user;
+  		let users: Array<string>;
+
+		this.fireStore.collection('users').snapshotChanges().subscribe((res) => {
+			res.forEach(r => {
+				user = r.payload.doc.data();
+				if (user["type"] == "Especialista") {
+					console.log(user["lastName"]);
+					users.push(user["lastName"].toString());
+				}
+			})
+		});
+
+		return users;
+  	}
+
+  	/*public userLogin(email: string, password: string, type: string){
   		this.authService.signIn(email, password, type);
   	}
 
@@ -30,5 +49,5 @@ export class UserService {
 	    console.log(this.fireStorage.upload(dni, file));
 
 	    return this.fireStore.collection('users').add(request) ;
-	}
+	}*/
 }
