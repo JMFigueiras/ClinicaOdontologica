@@ -1,33 +1,44 @@
 <form [formGroup]="form" class="card text-white bg-primary mb-3">
    <div class="form-group">
      <label>DNI</label>
-     <input type="text" formControlName="dni" class="form-control" required>
+     <input type="text" formControlName="dni" class="form-control" [ngClass]="{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }" required>
+    <div *ngIf="form.controls['dni'].touched && form.controls['dni'].invalid">Error, debe ingresar un DNI válido!</div>
    </div>
    <div class="form-group">
      <label>E-mail</label>
-     <input type="email" formControlName="email" class="form-control" required>
+     <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.controls['email'].touched && form.controls['email'].invalid }" required>
+     <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid">Error, debe ingresar un E-mail válido!</div>
    </div>
    <div class="form-group">
      <label>Clave</label>
-     <input type="password" class="form-control" formControlName="password" required>
-     <label class="error">{{errorMessage}}</label>
-     <label class="success">{{successMessage}}</label>
-   </div>
+     <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].touched && form.controls['password'].invalid }" required>
+     <div *ngIf="form.controls['password'].touched && form.controls['password'].invalid">Error, debe ingresar una clave válida! (mínimo 6 dígitos)</div>
+   </div>  
    <div class="form-group">
      <label>Nombre</label>
-     <input type="text" formControlName="firstName" class="form-control" required>
+     <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': form.controls['firstName'].touched && form.controls['firstName'].invalid }" required>
+     <div *ngIf="form.controls['firstName'].touched && form.controls['firstName'].invalid">Error, debe ingresar un nombre válido!</div>
    </div>
    <div class="form-group">
      <label>Apellido</label>
-     <input type="text" formControlName="lastName" class="form-control" required>
+     <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': form.controls['lastName'].touched && form.controls['lastName'].invalid }" required>
+     <div *ngIf="form.controls['lastName'].touched && form.controls['lastName'].invalid">Error, debe ingresar un apellido válido!</div>
   </div>
   <div class="form-group">
      <label>Tipo</label>
-     <input type="text" formControlName="type" class="form-control" required>
+     <select formControlName="type" class="form-control" required>
+     <option value="Cliente">Cliente</option>
+     <option value="Especialista">Especialista</option>
+     <option value="Recepcionista">Recepcionista</option>
+     </select> 
+     <!-- <input type="text" formControlName="type" class="form-control" required> -->
   </div>
   <div class="form-group">
-     <label>Archivo</label>
-     <input type="file" formControlName="file" class="form-control" (change)="onFileChange($event)"required>
+     <label>Archivo</label><br>
+     <input type="file" formControlName="file" accept="image/*" (change)="onFileChange($event)" required>
   </div>
-   <button type="submit" (click)="tryRegister()" class="btn btn-success">Register</button>
+
+  <small *ngIf="error" class=""><i class="fa fa-times"></i> {{errorMessage}} </small>
+  <!-- <small *ngIf="success" class=""><i class="fas fa-check"></i> Usuario creado con éxito! </small> -->
+  <button type="submit" (click)="tryRegister()" class="btn btn-success">Register</button>
 </form>

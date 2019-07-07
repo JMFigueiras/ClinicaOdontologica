@@ -1,13 +1,32 @@
 <form [formGroup]="form" class="card text-white bg-primary mb-3">
    <div class="form-group">
      <label>E-mail</label>
-     <input type="email" formControlName="email" class="form-control" required>
+     <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.controls['email'].touched && form.controls['email'].invalid }" required>
+     <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid">Error, debe ingresar un E-mail válido!</div>
    </div>
    <div class="form-group">
      <label>Clave</label>
-     <input type="password" class="form-control" formControlName="password" required>
-     <label class="error">{{errorMessage}}</label>
-     <label class="success">{{successMessage}}</label>
+     <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].touched && form.controls['password'].invalid }" required>
+     <div *ngIf="form.controls['password'].touched && form.controls['password'].invalid">Error, debe ingresar una clave válida! (mínimo 6 dígitos)</div>
+   </div> 
+   <div class="form-group">
+     <label>Tipo</label>
+     <select formControlName="type" class="form-control" required>
+     <option value="Cliente">Cliente</option>
+     <option value="Especialista">Especialista</option>
+     <option value="Recepcionista">Recepcionista</option>
+     </select> 
+     <!-- <input type="text" formControlName="type" class="form-control" required> -->
    </div>
+   <div class="form-group">
+     <label>Acceso rápido:</label>
+     <select formControlName="loader" class="form-control" (change)="defaultLoader($event.target.value)" required>
+     <option value="Cliente">Cliente</option>
+     <option value="Especialista">Especialista</option>
+     <option value="Recepcionista">Recepcionista</option>
+     </select> 
+     <!-- <input type="text" formControlName="type" class="form-control" required> -->
+   </div>
+   <small *ngIf="error" class=""><i class="fa fa-times"></i> {{errorMessage}} </small>
    <button type="submit" (click)="tryLogin()" class="btn btn-success">Login</button>
 </form>

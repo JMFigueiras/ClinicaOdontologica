@@ -14,15 +14,16 @@ export class AuthService {
 
 	constructor(public fireAuth: AngularFireAuth, public fireStore: AngularFirestore, public router: Router) {}
 
-	signIn(email: string, password: string) {
+	signIn(email: string, password: string, type: string) {
 		let usuario;
 		this.fireAuth.auth.signInWithEmailAndPassword(email, password).then(value => {
-			console.log('Logueo correcto!');
-			this.fireStore.collection('usuarios').snapshotChanges().subscribe((res) => {
+
+			this.fireStore.collection('users').snapshotChanges().subscribe((res) => {
 				res.forEach(r => {
 					usuario = r.payload.doc.data();
-					if (usuario["email"] == email) {
+					if (usuario["email"] == email && usuario["type"] == type) {
 						localStorage.setItem("token", JSON.stringify(usuario));
+						console.log("Entro");
 						this.router.navigate(['/Dashboard']);
 					}
 				})
@@ -40,6 +41,7 @@ export class AuthService {
 	      .createUserWithEmailAndPassword(email, password)
 	      .then(value => {
 	        console.log('Registro correcto!', value);
+	        this.router.navigate(['/Login']);
 	      })
 	      .catch(err => {
 	        console.log('Error, algo fallo!',err.message);
