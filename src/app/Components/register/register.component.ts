@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from './../../Services/user.service';
 import { Router } from '@angular/router';
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
 	public form: FormGroup;
+	selectedFiles: FileList;
 
   	constructor(public formBuilder: FormBuilder, public userService: UserService, private router: Router) {
 
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnInit {
   			firstName: ['', Validators.required],
   			lastName: ['', Validators.required],
   			type: ['', Validators.required],
+  			file: [null, Validators.required]
   		});
 
   	}
@@ -35,7 +37,16 @@ export class RegisterComponent implements OnInit {
     	const firstName: string = this.form.get('firstName').value;
     	const lastName: string = this.form.get('lastName').value;
     	const type: string = this.form.get('type').value;
-		this.userService.userRegister(dni, email, password, firstName, lastName, type, "Archivo.jpg");
+
+    	//let file = this.form.get('file');
+    	let file = this.selectedFiles.item(0);
+
+		this.userService.userRegister(dni, email, password, firstName, lastName, type, file);
+	}
+
+
+	onFileChange(event) {
+   		this.selectedFiles = event.target.files;
 	}
 
 }
