@@ -4,13 +4,33 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+//import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { LoginComponent } from './Components/login/login.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+  	AngularFirestoreModule, // Imports firebase/firestore, only needed for database features
+  	AngularFireAuthModule, // Imports firebase/auth, only needed for auth features
+  	FormsModule,
+  	ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

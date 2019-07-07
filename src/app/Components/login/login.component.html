@@ -1,0 +1,13 @@
+<form [formGroup]="form" class="card text-white bg-primary mb-3">
+   <div class="form-group">
+     <label>Mail</label>
+     <input type="mail" formControlName="mail" class="form-control" required>
+   </div>
+   <div class="form-group">
+     <label>Clave</label>
+     <input type="password" class="form-control" formControlName="clave" required>
+     <label class="error">{{errorMessage}}</label>
+     <label class="success">{{successMessage}}</label>
+   </div>
+   <button type="submit" (click)="tryLogin()" class="btn btn-success">Login</button>
+</form>
