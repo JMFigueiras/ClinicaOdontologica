@@ -12,31 +12,29 @@ import { User } from './../Entities/user';
 })
 export class DentistService {
 
-	public dentists: User[] = [];
+	public dentists = [];
 
   	constructor(private fireStore: AngularFirestore, private fireStorage: AngularFireStorage, private authService:AuthService) { }
 
-//: Observable<User[]>
   	public returnAll() {
 
-  		return this.fireStore.collection('users').snapshotChanges();
-  		/*let user: User;
+  		//return this.fireStore.collection('users').snapshotChanges();
+  		let user;
 
 		this.fireStore.collection('users').snapshotChanges().subscribe((res) => {
 			res.forEach(r => {
-				user = new User(r.payload.doc.data());
+				user = r.payload.doc.data();
 				if (user["type"] == "Especialista") {
-
-					//console.log(user["lastName"]);
-
-					this.dentists.push(user);
-
-					//this.users.push(user["lastName"]);
+	              
+	            	this.dentists.push({
+	                	id: r.payload.doc.id,
+	                	data: r.payload.doc.data()
+	              	});
 				}
 			})
 		});
 
-		return this.dentists;*/
+		return this.dentists;
   	}
 
   	/*public userLogin(email: string, password: string, type: string){

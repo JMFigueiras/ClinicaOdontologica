@@ -24,4 +24,4 @@
 </form>
 
   <select [(ngModel)]="dentistList" class="form-control">
-  <option *ngFor="let dentist of dentistList">{{dentist.lastName}}</select>
+  <option *ngFor="let dentist of dentistList">{{dentist.data.lastName}}</select>

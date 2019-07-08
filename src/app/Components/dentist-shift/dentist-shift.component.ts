@@ -13,9 +13,7 @@ export class DentistShiftComponent implements OnInit {
 
 	public form: FormGroup;
 
-	//public dentists : Observable<User[]>;
-
-	public dentistList: User[] = [];
+	public dentistList = [];
 
   	constructor(public formBuilder: FormBuilder, public dentist: DentistService) {
   		this.form = this.formBuilder.group({
@@ -24,37 +22,7 @@ export class DentistShiftComponent implements OnInit {
   		  	hour: ['', Validators.required]
      	 });
 
-
-      this.dentist.returnAll().subscribe((res) => {
-        res.forEach(r => {
-          let user = new User(r.payload.doc.data());
-            if (user["type"] == "Especialista") {
-
-              console.log(user["lastName"]);
-
-              this.dentistList.push(user);
-              console.log(this.dentistList.length);
-
-          //this.users.push(user["lastName"]);
-            }
-        })
-      });
-
-       /*this.dentist.returnAll().forEach( response => {
-         this.selectedObj.push(response);
-         //console.log(this.selectedObj);
-      });*/
-
-      //console.log("En componente: " +  this.dentist.returnAll().toString());
-
-      /*console.log("asd",this.dentist.returnAll().toString());
-
-  		this.dentist.returnAll().forEach( response => {
-  			this.selectedObj = response.toString();
-
-        console.log("reesponse", response.toString());
-  		});*/
-  		
+      this.dentistList = this.dentist.returnAll();
   	}
 
   	ngOnInit() {
