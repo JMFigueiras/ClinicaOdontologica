@@ -23,6 +23,5 @@
   <button type="submit" (click)="tryRegister()" class="btn btn-success">Register</button>
 </form>
 
-  <select [(ngModel)]="selectedObj" class="form-control">
-  <option *ngFor="let d of dentists" [ngValue]="d">
-  </select>
+  <select [(ngModel)]="dentistList" class="form-control">
+  <option *ngFor="let dentist of dentistList">{{dentist.lastName}}</select>
