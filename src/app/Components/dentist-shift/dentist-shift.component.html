@@ -15,13 +15,12 @@
      <div *ngIf="form.controls['hour'].touched && form.controls['hour'].invalid">Error, debe ingresar una hora válida!</div>
    </div>
    <div class="form-group">
-
+    <label>Especialista</label>
+    <select formControlName="lastName" class="form-control">
+    <option *ngFor="let dentist of dentistList">{{dentist.data.lastName}}</select>
   </div>
 
   <small *ngIf="error" class=""><i class="fa fa-times"></i> {{errorMessage}} </small>
   <!-- <small *ngIf="success" class=""><i class="fas fa-check"></i> Usuario creado con éxito! </small> -->
-  <button type="submit" (click)="tryRegister()" class="btn btn-success">Register</button>
+  <button type="submit" (click)="tryDentistShift()" class="btn btn-success">Register</button>
 </form>
-
-  <select [(ngModel)]="dentistList" class="form-control">
-  <option *ngFor="let dentist of dentistList">{{dentist.data.lastName}}</select>
