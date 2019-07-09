@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { DentistShiftService } from '../../Services/dentist-shift.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from "jquery";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -15,9 +16,13 @@ export class DentistShiftViewerComponent implements OnInit {
   @ViewChild('modal2') modal2: ElementRef;
 
   @Input() public id;
+  @Input() public dni;
 
   public modalReference1: any = null;
   public modalReference2: any = null;
+
+  public form1: FormGroup;
+  public form2: FormGroup;
 
   public dentistShiftList = [];
 
@@ -30,7 +35,7 @@ export class DentistShiftViewerComponent implements OnInit {
 
   public show: number = 0;
 
-  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal) {
+  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal, public formBuilder1: FormBuilder, public formBuilder2: FormBuilder) {
 
   	this.user = JSON.parse(localStorage.getItem('token'));
 
@@ -42,6 +47,18 @@ export class DentistShiftViewerComponent implements OnInit {
   		console.log(this.user.dni);
     	this.dentistShiftList = dentistShift.returnAllByDNI(this.user.dni);
   	}
+
+  	this.form1 = this.formBuilder1.group({
+  			code: ['', [Validators.required]],
+  			description: ['', [Validators.required, Validators.minLength(1), Validators.minLength(66)]]
+  	});
+
+  	this.form2 = this.formBuilder2.group({
+  			dni: ['', [Validators.required]],
+  			clinic: ['', [Validators.required, Validators.minLength(1), Validators.minLength(10)]],
+  			specialist: ['', [Validators.required, Validators.minLength(1), Validators.minLength(10)]],
+  			description: ['', [Validators.required, Validators.minLength(1), Validators.minLength(66)]]
+  	});
   	
   }
 
@@ -96,14 +113,24 @@ export class DentistShiftViewerComponent implements OnInit {
   	this.modalReference1.close();
   }
 
-  public openModal2(){
+  public openModal2(dni: string){
 
   	this.modalReference2 = this.modalService.open(this.modal2);
+
+  	this.dni = dni;
 
   }
 
   public closeModal2(){
   	this.modalReference2.close();
+  }
+
+  public tryReview(){
+
+  }
+
+  public tryPoll(){
+  	
   }
 
 }

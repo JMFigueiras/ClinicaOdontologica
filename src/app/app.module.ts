@@ -38,7 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFireStorageModule,
   	AngularFireAuthModule, // Imports firebase/auth, only needed for auth features
   	FormsModule,
-  	ReactiveFormsModule,
+  	ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     NgbModule.forRoot()
   ],
   providers: [],

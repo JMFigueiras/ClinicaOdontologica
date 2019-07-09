@@ -23,7 +23,7 @@
 	<td><button class="btn btn-danger" (click)="cancel(dentistShift.id)">Cancelar turno</button></td>
 	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Atender turno</button></td>
 	<td><button class="btn btn-danger" (click)="openModal1(dentistShift.id)">Enviar reseña</button></td>
-	<td><button class="btn btn-danger" (click)="openModal2()">Realizar encuesta</button></td>
+	<td><button class="btn btn-danger" (click)="openModal2(dentistShift.data.dni)">Realizar encuesta</button></td>
     </tr>
   </tbody>
 </table>
@@ -49,28 +49,45 @@
     </div>
 </ng-template>-->
 
-<ng-template #modal1 let-modal>
+<ng-template #modal1 let-modal class="card text-white bg-primary mb-3">
+
+	<div class="card text-white bg-primary mb-3">
+
+	<form [formGroup]="form1" class="card text-white bg-primary mb-3">
+	
     <div class="modal-header">
         <h4 class="modal-title">
             <span>Reseña</span>
         </h4>
+    
         <button type="button" class="close" aria-label="Close" (click)="closeModal1()">
             <span aria-hidden="true" >&times;</span>
         </button>
     </div>
 
+
     <div class="modal-body">
-    	<input type="text" class="form-control" [(ngModel)]="id">
+    	<p> <span>Código de turno:</span></p>
+    	<input type="text" class="form-control" formControlName="code" [(ngModel)]="id" readonly>
+    	<br>
         <p> <span>Descripción:</span></p>
-       	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+       	<textarea class="form-control" formControlName="description" rows="3"></textarea>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark">Enviar</button>
-
+        <button type="submit" (click)="tryReview()" class="btn btn-success">Enviar</button>
     </div>
+    </form>
+    
+    </div>
+	
 </ng-template>
 
-<ng-template #modal2 let-modal>
+<ng-template #modal2 let-modal class="card text-white bg-primary mb-3">
+	
+	<div class="card text-white bg-primary mb-3">
+
+	<form [formGroup]="form2" class="card text-white bg-primary mb-3">
+ 
     <div class="modal-header">
         <h4 class="modal-title">
             <span>Encuesta</span>
@@ -80,11 +97,21 @@
         </button>
     </div>
     <div class="modal-body">
+    	<p> <span>DNI:</span></p>
+    	<input type="text" class="form-control" formControlName="dni" [(ngModel)]="dni" readonly>
+    	<br>
+    	<p> <span>Calificación clínica:</span></p>
+    	<input type="text" class="form-control" formControlName="clinic">
+    	<br>
+    	<p> <span>Calificación especialista:</span></p>
+    	<input type="text" class="form-control" formControlName="specialist">
+    	<br>
         <p> <span>Descripción:</span></p>
-       	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+       	<textarea class="form-control" formControlName="description" rows="3"></textarea>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark">Enviar</button>
-
+        <button type="submit" (click)="tryPoll()" class="btn btn-success">Enviar</button>
+    </div>
+	</form>
     </div>
 </ng-template>
