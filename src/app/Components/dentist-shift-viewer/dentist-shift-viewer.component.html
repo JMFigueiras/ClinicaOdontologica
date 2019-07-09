@@ -22,28 +22,69 @@
 	<td>{{dentistShift.data.status}}</td>
 	<td><button class="btn btn-danger" (click)="cancel(dentistShift.id)">Cancelar turno</button></td>
 	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Atender turno</button></td>
-	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Enviar reseña</button></td>
-	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Realizar encuesta</button></td>
+	<td><button class="btn btn-danger" (click)="openModal1(dentistShift.id)">Enviar reseña</button></td>
+	<td><button class="btn btn-danger" (click)="openModal2()">Realizar encuesta</button></td>
     </tr>
   </tbody>
 </table>
 
-<button class="btn btn-primary" (click)="abrirModal()"></button>
+<!--<button class="btn btn-primary" (click)="openModal()">Test</button>
 
 <ng-template #modalMensaje let-modal>
     <div class="modal-header">
         <h4 class="modal-title">
-            <span>m</span>
+            <span>Reseña</span>
         </h4>
-        <button type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
     </div>
     <div class="modal-body">
-        <p> <span>m</span></p>
+        <p> <span>Descripción:</span></p>
+       	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark">Save</button>
+        <button type="button" class="btn btn-outline-dark">Enviar</button>
 
     </div>
-</ng-template>   
+</ng-template>-->
+
+<ng-template #modal1 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Reseña</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal1()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+    	<input type="text" class="form-control" [(ngModel)]="id">
+        <p> <span>Descripción:</span></p>
+       	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark">Enviar</button>
+
+    </div>
+</ng-template>
+
+<ng-template #modal2 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Encuesta</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal2()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p> <span>Descripción:</span></p>
+       	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark">Enviar</button>
+
+    </div>
+</ng-template>
