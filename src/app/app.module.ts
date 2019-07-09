@@ -18,7 +18,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.component';
 import { DentistShiftViewerComponent } from './Components/dentist-shift-viewer/dentist-shift-viewer.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { DentistShiftViewerComponent } from './Components/dentist-shift-viewer/d
     AngularFireStorageModule,
   	AngularFireAuthModule, // Imports firebase/auth, only needed for auth features
   	FormsModule,
-  	ReactiveFormsModule
+  	ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,3 +27,23 @@
     </tr>
   </tbody>
 </table>
+
+<button class="btn btn-primary" (click)="abrirModal()"></button>
+
+<ng-template #modalMensaje let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>m</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div class="modal-body">
+        <p> <span>m</span></p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark">Save</button>
+
+    </div>
+</ng-template>   

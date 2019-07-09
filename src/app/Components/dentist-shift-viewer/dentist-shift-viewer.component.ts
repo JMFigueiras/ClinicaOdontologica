@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DentistShiftService } from '../../Services/dentist-shift.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import * as $ from "jquery";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dentist-shift-viewer',
@@ -9,9 +11,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class DentistShiftViewerComponent implements OnInit {
 
+  @ViewChild('modalMensaje') modal: ElementRef;
+
   public dentistShiftList = [];
 
-  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore) {
+  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal) {
 
   	let user = JSON.parse(localStorage.getItem('token'));
 
@@ -63,4 +67,8 @@ export class DentistShiftViewerComponent implements OnInit {
 
   }
 
+  abrirModal(){
+  	this.modalService.open(this.modal);
+  }
+  
 }
