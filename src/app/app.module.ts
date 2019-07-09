@@ -17,6 +17,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.component';
+import { DentistShiftViewerComponent } from './Components/dentist-shift-viewer/dentist-shift-viewer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.
     DashboardComponent,
     NavbarComponent,
     RegisterComponent,
-    DentistShiftComponent
+    DentistShiftComponent,
+    DentistShiftViewerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <form [formGroup]="form" class="card text-white bg-primary mb-3">
    <div class="form-group">
      <label>DNI</label>
-     <input type="text" formControlName="dni" class="form-control" [ngClass]="{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }" required>
+     <input type="text" formControlName="dni" class="form-control" [ngClass]="{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }" required readonly>
     <div *ngIf="form.controls['dni'].touched && form.controls['dni'].invalid">Error, debe ingresar un DNI válido!</div>
    </div>
    <div class="form-group">
@@ -17,7 +17,7 @@
    <div class="form-group">
     <label>Especialista</label>
     <select formControlName="lastName" class="form-control">
-    <option *ngFor="let dentist of dentistList">{{dentist.data.lastName}}</select>
+    <option *ngFor="let dentist of dentistList" value="{{dentist.data.lastName}}">{{dentist.data.lastName}}</select>
   </div>
 
   <small *ngIf="error" class=""><i class="fa fa-times"></i> {{errorMessage}} </small>

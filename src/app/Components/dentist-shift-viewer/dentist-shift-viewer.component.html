@@ -1,0 +1,29 @@
+<table appPanel class="table table-sm table-hover table-primary table-striped">
+  <thead>
+    <tr>
+      <th class="text-center" colspan="7"><b>Lista de turnos</b></th>
+    </tr>
+    <tr>
+      <th>Código</th>
+      <th>DNI</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Especialista</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+	<tr *ngFor="let dentistShift of dentistShiftList">
+	<td>{{dentistShift.id}}</td>
+	<td>{{dentistShift.data.dni}}</td>
+	<td>{{dentistShift.data.date}}</td>
+	<td>{{dentistShift.data.hour}}</td>
+	<td>{{dentistShift.data.specialist}}</td>
+	<td>{{dentistShift.data.status}}</td>
+	<td><button class="btn btn-danger" (click)="cancel(dentistShift.id)">Cancelar turno</button></td>
+	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Atender turno</button></td>
+	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Enviar reseña</button></td>
+	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Realizar encuesta</button></td>
+    </tr>
+  </tbody>
+</table>
