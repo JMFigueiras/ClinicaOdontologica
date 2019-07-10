@@ -79,6 +79,6 @@ export class RegisterComponent implements OnInit {
 		if(event.target.files.length > 0){
 			this.selectedFiles = event.target.files;
 		}
-   	}	
+  }	
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { DentistShiftService } from '../../Services/dentist-shift.service';
+import { ReviewService } from '../../Services/review.service';
+import { PollService } from '../../Services/poll.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from "jquery";
@@ -35,7 +37,7 @@ export class DentistShiftViewerComponent implements OnInit {
 
   public show: number = 0;
 
-  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal, public formBuilder1: FormBuilder, public formBuilder2: FormBuilder) {
+  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal, public formBuilder1: FormBuilder, public formBuilder2: FormBuilder, public reviewService: ReviewService, public pollService: PollService) {
 
   	this.user = JSON.parse(localStorage.getItem('token'));
 
@@ -50,14 +52,14 @@ export class DentistShiftViewerComponent implements OnInit {
 
   	this.form1 = this.formBuilder1.group({
   			code: ['', [Validators.required]],
-  			description: ['', [Validators.required, Validators.minLength(1), Validators.minLength(66)]]
+  			descReview: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(66)]]
   	});
 
   	this.form2 = this.formBuilder2.group({
   			dni: ['', [Validators.required]],
-  			clinic: ['', [Validators.required, Validators.minLength(1), Validators.minLength(10)]],
-  			specialist: ['', [Validators.required, Validators.minLength(1), Validators.minLength(10)]],
-  			description: ['', [Validators.required, Validators.minLength(1), Validators.minLength(66)]]
+  			clinic: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
+  			specialist: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
+  			descPoll: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(66)]]
   	});
   	
   }
@@ -127,10 +129,30 @@ export class DentistShiftViewerComponent implements OnInit {
 
   public tryReview(){
 
+  	console.log(this.form1.valid);
+  	console.log(this.form1.get('code').value);
+  	console.log(this.form1.get('descReview').value);
+  	
+  	if(this.form1.valid){
+  		const code: string = this.form1.get('code').value;
+		const desc: string = this.form1.get('descReview').value;
+
+		this.reviewService.reviewRegister(code, desc);
+  	}
   }
 
   public tryPoll(){
+
+  	console.log(this.form2.valid);
   	
+  	if(this.form2.valid){
+  		const dni: string = this.form2.get('dni').value;
+  		const clinic: string = this.form2.get('clinic').value;
+  		const specialist: string=  this.form2.get('specialist').value;
+		const desc: string = this.form2.get('descPoll').value;
+
+		this.pollService.pollRegister(dni, clinic, specialist, desc);
+  	}
   }
 
 }
