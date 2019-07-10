@@ -12,6 +12,7 @@
    <div class="form-group">
      <label>Tipo</label>
      <select formControlName="type" class="form-control" required>
+    <option value="Administrador">Administrador</option>
      <option value="Cliente">Cliente</option>
      <option value="Especialista">Especialista</option>
      <option value="Recepcionista">Recepcionista</option>
@@ -21,6 +22,7 @@
    <div class="form-group">
      <label>Acceso rápido:</label>
      <select formControlName="loader" class="form-control" (change)="defaultLoader($event.target.value)" required>
+     <option value="Administrador">Administrador</option>
      <option value="Cliente">Cliente</option>
      <option value="Especialista">Especialista</option>
      <option value="Recepcionista">Recepcionista</option>
