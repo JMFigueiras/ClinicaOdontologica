@@ -19,6 +19,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.component';
 import { DentistShiftViewerComponent } from './Components/dentist-shift-viewer/dentist-shift-viewer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SpinnerComponent } from './Components/spinner/spinner.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavbarComponent,
     RegisterComponent,
     DentistShiftComponent,
-    DentistShiftViewerComponent
+    DentistShiftViewerComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   	AngularFireAuthModule, // Imports firebase/auth, only needed for auth features
   	FormsModule,
   	ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

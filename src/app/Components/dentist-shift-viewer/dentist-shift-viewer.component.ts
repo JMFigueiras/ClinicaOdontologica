@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from "jquery";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-dentist-shift-viewer',
@@ -14,8 +15,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DentistShiftViewerComponent implements OnInit {
 
-  @ViewChild('modal1') modal1: ElementRef;
-  @ViewChild('modal2') modal2: ElementRef;
+  @ViewChild('modal1',{static: true}) modal1: ElementRef;
+  @ViewChild('modal2',{static: true}) modal2: ElementRef;
 
   @Input() public id;
   @Input() public dni;
@@ -37,7 +38,7 @@ export class DentistShiftViewerComponent implements OnInit {
 
   public show: number = 0;
 
-  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal, public formBuilder1: FormBuilder, public formBuilder2: FormBuilder, public reviewService: ReviewService, public pollService: PollService) {
+  constructor(public dentistShift: DentistShiftService, private fireStore: AngularFirestore, private modalService: NgbModal, public formBuilder1: FormBuilder, public formBuilder2: FormBuilder, public reviewService: ReviewService, public pollService: PollService, private spinner: NgxSpinnerService) {
 
   	this.user = JSON.parse(localStorage.getItem('token'));
 
@@ -69,6 +70,8 @@ export class DentistShiftViewerComponent implements OnInit {
 
   public attend(id: string, dni: string, date: string, hour: string, specialist: string) {
 
+  	this.spinner.show();
+
   	const data: Object = {
   		dni: dni,
   		date: date,
@@ -89,6 +92,8 @@ export class DentistShiftViewerComponent implements OnInit {
   }
 
   public cancel(id: string){
+
+  	this.spinner.show();
 
   	this.dentistShiftList = [];
   	
