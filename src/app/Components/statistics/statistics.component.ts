@@ -93,6 +93,12 @@ export class StatisticsComponent implements OnInit {
   }
 
   public create1(){
+  	let dataPoints = [];
+	let y = 0;		
+	for ( var i = 0; i < 50; i++ ) {		  
+		y += Math.round(5 + Math.random() * (-5 - 5));	
+		dataPoints.push({ y: y});
+	}
   	let chart1 = new CanvasJS.Chart("chartContainer1", {
 		animationEnabled: true,
 		exportEnabled: true,
@@ -102,15 +108,8 @@ export class StatisticsComponent implements OnInit {
 		data: [{
 			type: "column",
 			dataPoints: [
-				{ y: 71, label: "Apple" },
-				{ y: 55, label: "Mango" },
-				{ y: 50, label: "Orange" },
-				{ y: 65, label: "Banana" },
-				{ y: 95, label: "Pineapple" },
-				{ y: 68, label: "Pears" },
-				{ y: 28, label: "Grapes" },
-				{ y: 34, label: "Lychee" },
-				{ y: 14, label: "Jackfruit" }
+				{ y: this.fireStore.collection('logs').snapshotChanges.length, label: "Ingresos de usuarios el mes de julio" },
+				{ y: this.fireStore.collection('dentistShifts').snapshotChanges.length, label: "Cant turnos p/ especialidad" }
 			]
 		}]
 	});
@@ -125,6 +124,16 @@ export class StatisticsComponent implements OnInit {
 
     }, 10000);
 
+   	let dataPoints = [];
+   	let dias: any = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+	let y = 0;		
+	for ( var i = 0; i < 6; i++ ) {		  
+		y += Math.round(5 + Math.random() * (-5 - 5));
+		if(y > 0){
+			dataPoints.push({ y: y, name: 'Turnos del día ' + dias[i] });
+		}
+	}
+
 	let chart2 = new CanvasJS.Chart("chartContainer2", {
 		theme: "light2",
 		animationEnabled: true,
@@ -135,13 +144,17 @@ export class StatisticsComponent implements OnInit {
 		data: [{
 			type: "pie",
 			showInLegend: true,
-			toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+			toolTipContent: "<b>{name}</b>: {y} (#percent%)",
 			indexLabel: "{name} - #percent%",
-			dataPoints: [
+			dataPoints: dataPoints /*[ 
 				{ y: this.fireStore.collection('dentistShifts').snapshotChanges.length, name: "TURNOS TOTALES" },
 				{ y: this.pedidos, name: "TURNOS PEDIDOS" },
-				{ y: this.atendidos, name: "TURNOS ATENDIDOS" }
-			]
+				{ y: this.atendidos, name: "TURNOS ATENDIDOS" },
+				{ y: this.atendidos, name: "Turnos realizados p/ especialidad" },
+				{ y: this.atendidos, name: "Turnos cancelados p/ especialidad" },
+				{ y: this.atendidos, name: "Turnos cancelados p/ clientes" },
+				{ y: this.atendidos, name: "Turnos cancelados p/ recepcionista" }
+			]*/
 		}]
 	});
 		
@@ -151,9 +164,11 @@ export class StatisticsComponent implements OnInit {
   public create3(){
 	let dataPoints = [];
 	let y = 0;		
-	for ( var i = 0; i < 10000; i++ ) {		  
+	for ( var i = 0; i < 10; i++ ) {		  
 		y += Math.round(5 + Math.random() * (-5 - 5));	
-		dataPoints.push({ y: y});
+		if(y > 0){
+			dataPoints.push({ y: y});
+		}
 	}
 	let chart3 = new CanvasJS.Chart("chartContainer3", {
 		zoomEnabled: true,

@@ -37,7 +37,8 @@ export class DentistShiftComponent implements OnInit {
       this.form = this.formBuilder.group({
         dni: [dni, [Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(8), Validators.maxLength(8)]],
         date: ['', Validators.required],
-        hour: ['', Validators.required],
+        hour: ['', [Validators.required, Validators.min(8), Validators.max(19)]],
+        duration: ['', [Validators.required, Validators.min(15), Validators.max(60)]],
         lastName: ['', Validators.required]
       });
     }

@@ -12,8 +12,13 @@
    </div>
    <div class="form-group">
      <label>Hora</label>
-     <input type="text" formControlName="hour" class="form-control" [ngClass]="{ 'is-invalid': form.controls['hour'].touched && form.controls['hour'].invalid }" required>
+     <input type="time" formControlName="hour" class="form-control" [ngClass]="{ 'is-invalid': form.controls['hour'].touched && form.controls['hour'].invalid }" required>
      <div *ngIf="form.controls['hour'].touched && form.controls['hour'].invalid">Error, debe ingresar una hora válida!</div>
+   </div>
+  <div class="form-group">
+     <label>Duracion</label>
+     <input type="number" formControlName="duration" class="form-control" [ngClass]="{ 'is-invalid': form.controls['duration'].touched && form.controls['duration'].invalid }" required>
+     <div *ngIf="form.controls['duration'].touched && form.controls['duration'].invalid">Error, debe ingresar una duración válida!</div>
    </div>
    <div class="form-group">
     <label>Especialista</label>

@@ -41,7 +41,7 @@ module.exports = "/* stylelint-disable selector-list-comma-newline-after */\n\n.
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-spinner></app-spinner>\n<body>\n\n    <br>\n    <br>\n    <br>\n    <br>\n    <br>\n    <div class=\"container\">\n\n      <div class=\"jumbotron p-3 p-md-5 text-white rounded bg-dark\">\n        <div class=\"col-md-6 px-0\">\n          <h1 class=\"display-4 font-italic\">Bienvenido a la clínica buena sonrisa!</h1>\n          <p class=\"lead my-3\">Nuestra clínica dental ofrece la mejor solucion efectiva en todas las áreas, en un entorno cálido y confortable, que cumple estrictas normas de bioseguridad. Contamos con equipamiento, instrumental y sistemas de última generación. Para tu conveniencia y comodidad, podemos realizar todos los procedimientos de diagnóstico y tratamiento dentro de nuestro centro.</p>\n        </div>\n      </div>\n\n      <div class=\"row mb-2\">\n        <div class=\"col-md-6\">\n          <div class=\"card text-white bg-primary mb-3\">\n            <a class=\"card-header\">Ortodoncia</a>\n            <div class=\"card-body\">\n              <div class=\"card-title\">Descripción:</div>\n              <p class=\"card-text mb-auto\">La ortodoncia es la especialidad de la odontología que se encarga de la corregir la situación de los dientes y huesos incorrectamente posicionados. Los dientes que se encuentran en mala posición y los que no muerden correctamente contra sus antagonistas, son difíciles de mantener limpios.</p>\n            <br></div>\n        </div>\n        </div>\n        <div class=\"col-md-6\">\n          <div class=\"card text-white bg-primary mb-3\">\n            <a class=\"card-header\">Prótesis</a>\n            <div class=\"card-body\">\n              <div class=\"card-title\">Descripción:</div>\n              <p class=\"card-text mb-auto\">Las prótesis dentales son los dispositivos artificiales que se emplean para sustituir uno o más dientes y tejidos circundantes que, por distintos motivos se han perdido, devolviendo tanto la funcionalidad como la estética perdida. Su finalidad es permitir que el paciente pueda masticar y expresarse con normalidad, cuestiones que, ante la falta de dientes, no podría realizar sin la prótesis en cuestión.</p>\n            </div>\n        </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"album py-5 bg-light\">\n        <div class=\"container\">\n\n          <div class=\"row\">\n            <div class=\"col-md-4\">\n              <div class=\"card text-white bg-primary mb-3\">\n                <img class=\"card-img-top\" src=\"/assets/1.jpeg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <p class=\"card-text\">Nuestra Clínica se encuentra habilitada por el ministerio de salud pública de la nación y, los residuos patológicos son retirados por la empresa habilitada para dicha tarea; colaborando con ello a la preservación del medio ambiente.</p>\n                  <div class=\"d-flex justify-content-between align-items-center\">\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-4\">\n              <div class=\"card text-white bg-primary mb-3\">\n                <img class=\"card-img-top\" src=\"/assets/2.jpeg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <p class=\"card-text\">En nuestra Clínica buscamos la excelencia en todo lo que hacemos; contamos con un equipo de profesionales altamente capacitados y especializados en cada área.<br><br><br></p>\n                  <div class=\"d-flex justify-content-between align-items-center\">\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-4\">\n              <div class=\"card text-white bg-primary mb-3\">\n                <img class=\"card-img-top\" src=\"/assets/3.jpeg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <p class=\"card-text\">El Dr. Andrés Etbul, es especialista en implantologia y técnicas de aumento de volumen, injertos y relleno óseo. Junto a un equipo de profesionales se ocupa día a día de brindar atención odontológica personalizada, moderna e integral.</p>\n                  <div class=\"d-flex justify-content-between align-items-center\">\n                  </div>\n                </div>\n              </div>\n            </div>\n\n          </div>\n        </div>\n      </div>\n</body>"
+module.exports = "<app-spinner></app-spinner>\n<app-navbar></app-navbar>\n\n\n<router-outlet></router-outlet>\n<app-log></app-log>\n<body *ngIf=\"route.children.length === 0\">\n    <br>\n    <br>\n    <br>\n    <br>\n    <br>\n    <div class=\"container\">\n\n      <div class=\"jumbotron p-3 p-md-5 text-white rounded bg-dark\">\n        <div class=\"col-md-6 px-0\">\n          <h1 class=\"display-4 font-italic\">Bienvenido a la clínica buena sonrisa!</h1>\n          <p class=\"lead my-3\">Nuestra clínica dental ofrece la mejor solucion efectiva en todas las áreas, en un entorno cálido y confortable, que cumple estrictas normas de bioseguridad. Contamos con equipamiento, instrumental y sistemas de última generación. Para tu conveniencia y comodidad, podemos realizar todos los procedimientos de diagnóstico y tratamiento dentro de nuestro centro.</p>\n        </div>\n      </div>\n\n      <div class=\"row mb-2\">\n        <div class=\"col-md-6\">\n          <div class=\"card text-white bg-primary mb-3\">\n            <a class=\"card-header\">Ortodoncia</a>\n            <div class=\"card-body\">\n              <div class=\"card-title\">Descripción:</div>\n              <p class=\"card-text mb-auto\">La ortodoncia es la especialidad de la odontología que se encarga de la corregir la situación de los dientes y huesos incorrectamente posicionados. Los dientes que se encuentran en mala posición y los que no muerden correctamente contra sus antagonistas, son difíciles de mantener limpios.</p>\n            <br></div>\n        </div>\n        </div>\n        <div class=\"col-md-6\">\n          <div class=\"card text-white bg-primary mb-3\">\n            <a class=\"card-header\">Prótesis</a>\n            <div class=\"card-body\">\n              <div class=\"card-title\">Descripción:</div>\n              <p class=\"card-text mb-auto\">Las prótesis dentales son los dispositivos artificiales que se emplean para sustituir uno o más dientes y tejidos circundantes que, por distintos motivos se han perdido, devolviendo tanto la funcionalidad como la estética perdida. Su finalidad es permitir que el paciente pueda masticar y expresarse con normalidad, cuestiones que, ante la falta de dientes, no podría realizar sin la prótesis en cuestión.</p>\n            </div>\n        </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"album py-5 bg-light\">\n        <div class=\"container\">\n\n          <div class=\"row\">\n            <div class=\"col-md-4\">\n              <div class=\"card text-white bg-primary mb-3\">\n                <img class=\"card-img-top\" src=\"/assets/1.jpeg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <p class=\"card-text\">Nuestra Clínica se encuentra habilitada por el ministerio de salud pública de la nación y, los residuos patológicos son retirados por la empresa habilitada para dicha tarea; colaborando con ello a la preservación del medio ambiente.</p>\n                  <div class=\"d-flex justify-content-between align-items-center\">\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-4\">\n              <div class=\"card text-white bg-primary mb-3\">\n                <img class=\"card-img-top\" src=\"/assets/2.jpeg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <p class=\"card-text\">En nuestra Clínica buscamos la excelencia en todo lo que hacemos; contamos con un equipo de profesionales altamente capacitados y especializados en cada área.<br><br><br></p>\n                  <div class=\"d-flex justify-content-between align-items-center\">\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-4\">\n              <div class=\"card text-white bg-primary mb-3\">\n                <img class=\"card-img-top\" src=\"/assets/3.jpeg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <p class=\"card-text\">El Dr. Andrés Etbul, es especialista en implantologia y técnicas de aumento de volumen, injertos y relleno óseo. Junto a un equipo de profesionales se ocupa día a día de brindar atención odontológica personalizada, moderna e integral.</p>\n                  <div class=\"d-flex justify-content-between align-items-center\">\n                  </div>\n                </div>\n              </div>\n            </div>\n\n          </div>\n        </div>\n      </div>\n</body>"
 
 /***/ }),
 
@@ -57,10 +57,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let DashboardComponent = class DashboardComponent {
-    constructor() {
+    constructor(route) {
+        this.route = route;
     }
     ngOnInit() {
     }
@@ -71,7 +74,7 @@ DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/Components/dashboard/dashboard.component.html"),
         styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/Components/dashboard/dashboard.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
 ], DashboardComponent);
 
 
@@ -96,7 +99,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-spinner></app-spinner>\n<table appPanel class=\"table table-sm table-hover table-primary table-striped\">\n  <thead>\n    <tr>\n      <th class=\"text-center\" colspan=\"7\"><b>Lista de turnos</b></th>\n    </tr>\n    <tr>\n      <th>Código</th>\n      <th>DNI</th>\n      <th>Fecha</th>\n      <th>Hora</th>\n      <th>Especialista</th>\n      <th>Estado</th>\n    </tr>\n  </thead>\n  <tbody>\n\t<tr *ngFor=\"let dentistShift of dentistShiftList\">\n\t<td>{{dentistShift.id}}</td>\n\t<td>{{dentistShift.data.dni}}</td>\n\t<td>{{dentistShift.data.date}}</td>\n\t<td>{{dentistShift.data.hour}}</td>\n\t<td>{{dentistShift.data.specialist}}</td>\n\t<td>{{dentistShift.data.status}}</td>\n\t<td><button class=\"btn btn-danger\" (click)=\"cancel(dentistShift.id)\">Cancelar turno</button></td>\n\t<td><button class=\"btn btn-danger\" (click)=\"attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)\">Atender turno</button></td>\n\t<td><button class=\"btn btn-danger\" (click)=\"openModal1(dentistShift.id)\">Enviar reseña</button></td>\n\t<td><button class=\"btn btn-danger\" (click)=\"viewReview(dentistShift.id)\">Ver reseña</button></td>\n\t<td><button class=\"btn btn-danger\" (click)=\"openModal2(dentistShift.data.dni)\">Realizar encuesta</button></td>\n    </tr>\n  </tbody>\n</table>\n\n<!--<button class=\"btn btn-primary\" (click)=\"openModal()\">Test</button>\n\n<ng-template #modalMensaje let-modal>\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Reseña</span>\n        </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeModal()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <p> <span>Descripción:</span></p>\n       \t<textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-outline-dark\">Enviar</button>\n\n    </div>\n</ng-template>-->\n\n<ng-template #modal1 let-modal class=\"card text-white bg-primary mb-3\">\n\t\n\t<app-spinner></app-spinner>\n\n\t<div class=\"card text-white bg-primary mb-3\">\n\n\t<form [formGroup]=\"form1\" class=\"card text-white bg-primary mb-3\">\n\t\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Reseña</span>\n        </h4>\n    \n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeModal1()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n\n\n    <div class=\"modal-body\">\n    \t<p> <span>Código de turno:</span></p>\n    \t<input type=\"text\" class=\"form-control\" formControlName=\"code\" [(ngModel)]=\"id\" readonly>\n    \t<br>\n        <p> <span>Descripción:</span></p>\n       \t<textarea class=\"form-control\" formControlName=\"descReview\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"submit\" (click)=\"tryReview()\" class=\"btn btn-success\">Enviar</button>\n    </div>\n    </form>\n    \n    </div>\n\t\n</ng-template>\n\n<ng-template #review let-modal class=\"card text-white bg-primary mb-3\">\n\t\n\t<app-spinner></app-spinner>\n\n\t<div class=\"card text-white bg-primary mb-3\">\n\n\n\t\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Reseña</span>\n        </h4>\n    \n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeReview()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n\n\t<div ngFor=\"let review of reviews\">\n\t\t{{review.data.code}}\n\t\t{{review.data.desc}}\n\t</div>\n\n    \n    </div>\n\t\n</ng-template>\n\n<ng-template #modal2 let-modal class=\"card text-white bg-primary mb-3\">\n\t\n\t<app-spinner></app-spinner>\n\n\t<div class=\"card text-white bg-primary mb-3\">\n\n\t<form [formGroup]=\"form2\" class=\"card text-white bg-primary mb-3\">\n \n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Encuesta</span>\n        </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeModal2()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n    \t<p> <span>DNI:</span></p>\n    \t<input type=\"text\" class=\"form-control\" formControlName=\"dni\" [(ngModel)]=\"dni\" readonly>\n    \t<br>\n    \t<p> <span>Calificación clínica:</span></p>\n    \t<input type=\"text\" class=\"form-control\" formControlName=\"clinic\">\n    \t<br>\n    \t<p> <span>Calificación especialista:</span></p>\n    \t<input type=\"text\" class=\"form-control\" formControlName=\"specialist\">\n    \t<br>\n        <p> <span>Descripción:</span></p>\n       \t<textarea class=\"form-control\" formControlName=\"descPoll\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"submit\" (click)=\"tryPoll()\" class=\"btn btn-success\">Enviar</button>\n    </div>\n\t</form>\n    </div>\n</ng-template>\n\n\n\n    <div id=\"chartContainer\" style=\"height: 370px; width: 100%;\"></div>\n\n"
+module.exports = "<app-spinner></app-spinner>\n<table appPanel class=\"table table-sm table-hover table-primary table-striped\">\n  <thead>\n    <tr>\n      <th class=\"text-center\" colspan=\"7\"><b>Lista de turnos</b></th>\n    </tr>\n    <tr>\n      <th>Código</th>\n      <th>DNI</th>\n      <th>Fecha</th>\n      <th>Hora</th>\n      <th>Especialista</th>\n      <th>Estado</th>\n    </tr>\n  </thead>\n  <tbody>\n\t<tr *ngFor=\"let dentistShift of dentistShiftList\">\n\t<td>{{dentistShift.id}}</td>\n\t<td>{{dentistShift.data.dni}}</td>\n\t<td>{{dentistShift.data.date}}</td>\n\t<td>{{dentistShift.data.hour}}</td>\n\t<td>{{dentistShift.data.specialist}}</td>\n\t<td>{{dentistShift.data.status}}</td>\n\t<td><button class=\"btn btn-danger\" *appTypeValidator=\"['Recepcionista']\" (click)=\"cancel(dentistShift.id)\">Cancelar turno</button></td>\n\t<td><button class=\"btn btn-danger\" *appTypeValidator=\"['Especialista']\" (click)=\"attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)\">Atender turno</button></td>\n\t<td><button class=\"btn btn-danger\" *appTypeValidator=\"['Especialista']\" (click)=\"openModal1(dentistShift.id)\">Enviar reseña</button></td>\n\t<td><button class=\"btn btn-danger\" *appTypeValidator=\"['Cliente']\" (click)=\"viewReview(dentistShift.id)\">Ver reseña</button></td>\n\t<td><button class=\"btn btn-danger\" *appTypeValidator=\"['Cliente']\" (click)=\"openModal2(dentistShift.data.dni)\">Realizar encuesta</button></td>\n    </tr>\n  </tbody>\n</table>\n\n<!--<button class=\"btn btn-primary\" (click)=\"openModal()\">Test</button>\n\n<ng-template #modalMensaje let-modal>\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Reseña</span>\n        </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeModal()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <p> <span>Descripción:</span></p>\n       \t<textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-outline-dark\">Enviar</button>\n\n    </div>\n</ng-template>-->\n\n<ng-template #modal1 let-modal class=\"card text-white bg-primary mb-3\">\n\t\n\t<app-spinner></app-spinner>\n\n\t<div class=\"card text-white bg-primary mb-3\">\n\n\t<form [formGroup]=\"form1\" class=\"card text-white bg-primary mb-3\">\n\t\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Reseña</span>\n        </h4>\n    \n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeModal1()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n\n\n    <div class=\"modal-body\">\n    \t<p> <span>Código de turno:</span></p>\n    \t<input type=\"text\" class=\"form-control\" formControlName=\"code\" [(ngModel)]=\"id\" readonly>\n    \t<br>\n        <p> <span>Descripción:</span></p>\n       \t<textarea class=\"form-control\" formControlName=\"descReview\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"submit\" (click)=\"tryReview()\" class=\"btn btn-success\">Enviar</button>\n    </div>\n    </form>\n    \n    </div>\n\t\n</ng-template>\n\n<ng-template #review let-modal class=\"card text-white bg-primary mb-3\">\n\t\n\t<app-spinner></app-spinner>\n\n\t<div class=\"card text-white bg-primary mb-3\">\n\n\n\t\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Reseña</span>\n        </h4>\n    \n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeReview()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n    \n    <div class=\"modal-body\" *ngFor=\"let review of reviews\">\n        <p> <span>Código de turno:</span></p>\n        <p>{{review.data.code}}</p>\n        <br>\n        <p> <span>Descripción:</span></p>\n        <textarea class=\"form-control\" rows=\"3\" readonly>{{review.data.desc}}</textarea>\n    </div>\n \n    </div>\n\t\n</ng-template>\n\n<ng-template #modal2 let-modal class=\"card text-white bg-primary mb-3\">\n\t\n\t<app-spinner></app-spinner>\n\n\t<div class=\"card text-white bg-primary mb-3\">\n\n\t<form [formGroup]=\"form2\" class=\"card text-white bg-primary mb-3\">\n \n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">\n            <span>Encuesta</span>\n        </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeModal2()\">\n            <span aria-hidden=\"true\" >&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n    \t<p> <span>DNI:</span></p>\n    \t<input type=\"text\" class=\"form-control\" formControlName=\"dni\" [(ngModel)]=\"dni\" readonly>\n    \t<br>\n    \t<p> <span>Calificación clínica:</span></p>\n    \t<input type=\"number\" class=\"form-control\" formControlName=\"clinic\">\n    \t<br>\n    \t<p> <span>Calificación especialista:</span></p>\n    \t<input type=\"number\" class=\"form-control\" formControlName=\"specialist\">\n    \t<br>\n        <p> <span>Descripción:</span></p>\n       \t<textarea class=\"form-control\" formControlName=\"descPoll\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"submit\" (click)=\"tryPoll()\" class=\"btn btn-success\">Enviar</button>\n    </div>\n\t</form>\n    </div>\n</ng-template>\n\n"
 
 /***/ }),
 
@@ -119,9 +122,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm2015/ngx-spinner.js");
-/* harmony import */ var canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! canvasjs/canvasjs.min */ "./node_modules/canvasjs/canvasjs.min.js");
-/* harmony import */ var canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_9__);
-
 
 
 
@@ -158,6 +158,9 @@ let DentistShiftViewerComponent = class DentistShiftViewerComponent {
             console.log(this.user.dni);
             this.dentistShiftList = dentistShift.returnAllByDNI(this.user.dni);
         }
+        else {
+            this.dentistShiftList = dentistShift.returnAll();
+        }
         this.form1 = this.formBuilder1.group({
             code: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]],
             descReview: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].maxLength(66)]]
@@ -170,28 +173,6 @@ let DentistShiftViewerComponent = class DentistShiftViewerComponent {
         });
     }
     ngOnInit() {
-        let chart = new canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_9__["Chart"]("chartContainer", {
-            animationEnabled: true,
-            exportEnabled: true,
-            title: {
-                text: "Basic Column Chart in Angular"
-            },
-            data: [{
-                    type: "column",
-                    dataPoints: [
-                        { y: 71, label: "Apple" },
-                        { y: 55, label: "Mango" },
-                        { y: 50, label: "Orange" },
-                        { y: 65, label: "Banana" },
-                        { y: 95, label: "Pineapple" },
-                        { y: 68, label: "Pears" },
-                        { y: 28, label: "Grapes" },
-                        { y: 34, label: "Lychee" },
-                        { y: 14, label: "Jackfruit" }
-                    ]
-                }]
-        });
-        chart.render();
     }
     attend(id, dni, date, hour, specialist) {
         this.spinner.show();
@@ -242,6 +223,7 @@ let DentistShiftViewerComponent = class DentistShiftViewerComponent {
     }
     viewReview(id) {
         this.reviewReference = this.modalService.open(this.review);
+        console.log(id);
         this.reviews = this.reviewService.returnById(id);
     }
     closeReview() {
@@ -309,7 +291,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-spinner></app-spinner>\n<form [formGroup]=\"form\" class=\"card text-white bg-primary mb-3\">\n   <div class=\"form-group\">\n     <label>DNI</label>\n     <input type=\"text\" formControlName=\"dni\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }\" required readonly>\n    <div *ngIf=\"form.controls['dni'].touched && form.controls['dni'].invalid\">Error, debe ingresar un DNI válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Fecha</label>\n     <input type=\"date\" formControlName=\"date\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['date'].touched && form.controls['date'].invalid }\" required>\n     <div *ngIf=\"form.controls['date'].touched && form.controls['date'].invalid\">Error, debe ingresar una fecha válida!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Hora</label>\n     <input type=\"text\" formControlName=\"hour\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['hour'].touched && form.controls['hour'].invalid }\" required>\n     <div *ngIf=\"form.controls['hour'].touched && form.controls['hour'].invalid\">Error, debe ingresar una hora válida!</div>\n   </div>\n   <div class=\"form-group\">\n    <label>Especialista</label>\n    <select formControlName=\"lastName\" class=\"form-control\">\n    <option *ngFor=\"let dentist of dentistList\" value=\"{{dentist.data.lastName}}\">{{dentist.data.lastName}}</select>\n  </div>\n\n  <small *ngIf=\"error\" class=\"\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n  <!-- <small *ngIf=\"success\" class=\"\"><i class=\"fas fa-check\"></i> Usuario creado con éxito! </small> -->\n  <button type=\"submit\" (click)=\"tryDentistShift()\" class=\"btn btn-success\">Register</button>\n</form>\n"
+module.exports = "<app-spinner></app-spinner>\n<form [formGroup]=\"form\" class=\"card text-white bg-primary mb-3\">\n   <div class=\"form-group\">\n     <label>DNI</label>\n     <input type=\"text\" formControlName=\"dni\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }\" required readonly>\n    <div *ngIf=\"form.controls['dni'].touched && form.controls['dni'].invalid\">Error, debe ingresar un DNI válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Fecha</label>\n     <input type=\"date\" formControlName=\"date\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['date'].touched && form.controls['date'].invalid }\" required>\n     <div *ngIf=\"form.controls['date'].touched && form.controls['date'].invalid\">Error, debe ingresar una fecha válida!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Hora</label>\n     <input type=\"time\" formControlName=\"hour\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['hour'].touched && form.controls['hour'].invalid }\" required>\n     <div *ngIf=\"form.controls['hour'].touched && form.controls['hour'].invalid\">Error, debe ingresar una hora válida!</div>\n   </div>\n  <div class=\"form-group\">\n     <label>Duracion</label>\n     <input type=\"number\" formControlName=\"duration\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['duration'].touched && form.controls['duration'].invalid }\" required>\n     <div *ngIf=\"form.controls['duration'].touched && form.controls['duration'].invalid\">Error, debe ingresar una duración válida!</div>\n   </div>\n   <div class=\"form-group\">\n    <label>Especialista</label>\n    <select formControlName=\"lastName\" class=\"form-control\">\n    <option *ngFor=\"let dentist of dentistList\" value=\"{{dentist.data.lastName}}\">{{dentist.data.lastName}}</select>\n  </div>\n\n  <small *ngIf=\"error\" class=\"\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n  <!-- <small *ngIf=\"success\" class=\"\"><i class=\"fas fa-check\"></i> Usuario creado con éxito! </small> -->\n  <button type=\"submit\" (click)=\"tryDentistShift()\" class=\"btn btn-success\">Register</button>\n</form>\n"
 
 /***/ }),
 
@@ -350,7 +332,8 @@ let DentistShiftComponent = class DentistShiftComponent {
         this.form = this.formBuilder.group({
             dni: [dni, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('[0-9]*'), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(8)]],
             date: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
-            hour: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+            hour: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].min(8), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].max(19)]],
+            duration: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].min(15), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].max(60)]],
             lastName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]
         });
     }
@@ -394,6 +377,98 @@ DentistShiftComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/Components/log/log.component.css":
+/*!**************************************************!*\
+  !*** ./src/app/Components/log/log.component.css ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudHMvbG9nL2xvZy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/Components/log/log.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/Components/log/log.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<table appPanel class=\"table table-sm table-hover table-primary table-striped\">\n  <thead>\n    <tr>\n      <th class=\"text-center\" colspan=\"7\"><b>Lista de usuarios conectados recientemente</b></th>\n    </tr>\n    <tr>\n      <th>Email</th>\n      <th>DNI</th>\n      <th>Nombre</th>\n      <th>Apellido</th>\n      <th>Fecha & hora</th>\n      <th>Imagen</th>\n    </tr>\n  </thead>\n  <tbody>\n\t<tr *ngFor=\"let log of logs; let i = index\">\n\t<td>{{log.data.email}}</td>\n\t<td>{{log.data.dni}}</td>\n\t<td>{{log.data.firstName}}</td>\n\t<td>{{log.data.lastName}}</td>\n\t<td>{{log.data.date}}</td>\n\t<td><img src=\"{{imgs[i]}}\"  height=\"75\" width=\"75\"></td>\n    </tr>\n  </tbody>\n</table>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/Components/log/log.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/Components/log/log.component.ts ***!
+  \*************************************************/
+/*! exports provided: LogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogComponent", function() { return LogComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/es2015/index.js");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/es2015/index.js");
+
+
+
+
+
+let LogComponent = class LogComponent {
+    constructor(fireStore, fireStorage, firebase) {
+        this.fireStore = fireStore;
+        this.fireStorage = fireStorage;
+        this.firebase = firebase;
+        this.logs = [];
+        this.imgs = [];
+        this.logs = this.returnAll();
+    }
+    returnAll() {
+        //return this.fireStore.collection('users').snapshotChanges();
+        let log;
+        this.fireStore.collection('logs').snapshotChanges().subscribe((res) => {
+            res.forEach(r => {
+                log = r.payload.doc.data();
+                this.logs.push({
+                    id: r.payload.doc.id,
+                    data: r.payload.doc.data()
+                });
+                this.returnImg(log["dni"] + ".png");
+                console.log(log["dni"]);
+            });
+        });
+        return this.logs;
+    }
+    returnImg(dni) {
+        this.fireStorage.ref(dni).getDownloadURL().subscribe(r => {
+            this.imgs.push(r.toString());
+        });
+        let file;
+        file = this.fireStorage.ref(dni).getDownloadURL().subscribe(r => {
+            console.log(r);
+        });
+    }
+    ngOnInit() {
+    }
+};
+LogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-log',
+        template: __webpack_require__(/*! ./log.component.html */ "./src/app/Components/log/log.component.html"),
+        styles: [__webpack_require__(/*! ./log.component.css */ "./src/app/Components/log/log.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _angular_fire_storage__WEBPACK_IMPORTED_MODULE_3__["AngularFireStorage"], _angular_fire__WEBPACK_IMPORTED_MODULE_4__["FirebaseApp"]])
+], LogComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/Components/login/login.component.css":
 /*!******************************************************!*\
   !*** ./src/app/Components/login/login.component.css ***!
@@ -412,7 +487,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"form\" class=\"card text-white bg-primary mb-3\">\n   <div class=\"form-group\">\n     <label>E-mail</label>\n     <input type=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['email'].touched && form.controls['email'].invalid }\" required>\n     <div *ngIf=\"form.controls['email'].touched && form.controls['email'].invalid\">Error, debe ingresar un E-mail válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Clave</label>\n     <input type=\"password\" class=\"form-control\" formControlName=\"password\" [ngClass]=\"{ 'is-invalid': form.controls['password'].touched && form.controls['password'].invalid }\" required>\n     <div *ngIf=\"form.controls['password'].touched && form.controls['password'].invalid\">Error, debe ingresar una clave válida! (mínimo 6 dígitos)</div>\n   </div> \n   <div class=\"form-group\">\n     <label>Tipo</label>\n     <select formControlName=\"type\" class=\"form-control\" required>\n     <option value=\"Administrador\">Administrador</option>\n     <option value=\"Cliente\">Cliente</option>\n     <option value=\"Especialista\">Especialista</option>\n     <option value=\"Recepcionista\">Recepcionista</option>\n     </select> \n     <!-- <input type=\"text\" formControlName=\"type\" class=\"form-control\" required> -->\n   </div>\n   <div class=\"form-group\">\n   <label>Captcha</label>\n   <ngx-recaptcha2 formControlName=\"recaptcha\" #captchaElem [siteKey]=\"'6LfOWEwUAAAAADnvwUXuRX7Z37k6PWatdong9Zs4'\" [useGlobalDomain]=\"false\"></ngx-recaptcha2>\n   </div>\n   <div class=\"form-group\">\n     <label>Acceso rápido:</label>\n     <select formControlName=\"loader\" class=\"form-control\" (change)=\"defaultLoader($event.target.value)\" required>\n     <option value=\"Administrador\">Administrador</option>\n     <option value=\"Cliente\">Cliente</option>\n     <option value=\"Especialista\">Especialista</option>\n     <option value=\"Recepcionista\">Recepcionista</option>\n     </select> \n     <!-- <input type=\"text\" formControlName=\"type\" class=\"form-control\" required> -->\n   </div>\n   <small *ngIf=\"error\" class=\"\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n   <button type=\"submit\" (click)=\"tryLogin()\" class=\"btn btn-success\">Login</button>\n</form>"
+module.exports = "<app-navbar></app-navbar>\n<app-spinner></app-spinner>\n<form [formGroup]=\"form\" class=\"card text-white bg-primary mb-3\">\n   <div class=\"form-group\">\n     <label>E-mail</label>\n     <input type=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['email'].touched && form.controls['email'].invalid }\" required>\n     <div *ngIf=\"form.controls['email'].touched && form.controls['email'].invalid\">Error, debe ingresar un E-mail válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Clave</label>\n     <input type=\"password\" class=\"form-control\" formControlName=\"password\" [ngClass]=\"{ 'is-invalid': form.controls['password'].touched && form.controls['password'].invalid }\" required>\n     <div *ngIf=\"form.controls['password'].touched && form.controls['password'].invalid\">Error, debe ingresar una clave válida! (mínimo 6 dígitos)</div>\n   </div> \n   <div class=\"form-group\">\n     <label>Tipo</label>\n     <select formControlName=\"type\" class=\"form-control\" required>\n     <option value=\"Administrador\">Administrador</option>\n     <option value=\"Cliente\">Cliente</option>\n     <option value=\"Especialista\">Especialista</option>\n     <option value=\"Recepcionista\">Recepcionista</option>\n     </select> \n     <!-- <input type=\"text\" formControlName=\"type\" class=\"form-control\" required> -->\n   </div>\n   <div class=\"form-group\">\n   <label>Captcha</label>\n   <ngx-recaptcha2 formControlName=\"recaptcha\" #captchaElem [siteKey]=\"'6LcbTK0UAAAAAJ6n4S1FE4rV9p4piRQ6yZrbjDyn'\" [useGlobalDomain]=\"false\"></ngx-recaptcha2>\n   </div>\n   <div class=\"form-group\">\n     <label>Acceso rápido:</label>\n     <select formControlName=\"loader\" class=\"form-control\" (change)=\"defaultLoader($event.target.value)\" required>\n     <option value=\"Administrador\">Administrador</option>\n     <option value=\"Cliente\">Cliente</option>\n     <option value=\"Especialista\">Especialista</option>\n     <option value=\"Recepcionista\">Recepcionista</option>\n     </select> \n     <!-- <input type=\"text\" formControlName=\"type\" class=\"form-control\" required> -->\n   </div>\n   <small *ngIf=\"error\" class=\"\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n   <button type=\"submit\" (click)=\"tryLogin()\" class=\"btn btn-success\">Login</button>\n</form>"
 
 /***/ }),
 
@@ -445,7 +520,7 @@ let LoginComponent = class LoginComponent {
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
             type: ['Cliente', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            recaptcha: [''],
+            recaptcha: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             loader: ['Cliente', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
         });
         this.errorMessage = '';
@@ -523,7 +598,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" href=\"#\">Clínica Odontológica - Buena Sonrisa</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n   <ul class=\"navbar-nav mr-auto\">\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Administrador']\" \n          routerLinkActive=\"active\" routerLink=\"Register\">Registrar</a>\n      </li>\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Recepcionista', 'Cliente']\" \n          routerLinkActive=\"active\" routerLink=\"DentistShift\">Pedir un turno</a>\n      </li>\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Administrador','Cliente', 'Especialista', 'Recepcionista']\" \n          routerLinkActive=\"active\" routerLink=\"DentistShiftViewer\">Información</a>\n      </li>\n    </ul>\n    <ul class=\"nav navbar-nav navbar-right\">\n      <span class=\"navbar-text\" *appTypeValidator=\"['Administrador','Cliente', 'Especialista', 'Recepcionista']\"> <i class=\"far fa-id-card\"></i> {{email}} - {{firstName}} - {{type}}</span>\n      <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"Login\"><i class=\"fas fa-sign-in-alt\"></i>Loguearse</a></li>\n      <li class=\"nav-item\"><a class=\"nav-link\" *appTypeValidator=\"['Administrador','Cliente', 'Especialista', 'Recepcionista']\"  (click)=\"logout()\">Salir</a></li>\n    </ul>\n</div>\n</nav>\n<br>\n<br>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" href=\"#\">Clínica Odontológica - Buena Sonrisa</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n   <ul class=\"navbar-nav mr-auto\">\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Administrador']\" \n          routerLinkActive=\"active\" routerLink=\"Register\">Registrar</a>\n      </li>\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Recepcionista', 'Cliente']\" \n          routerLinkActive=\"active\" routerLink=\"DentistShift\">Pedir un turno</a>\n      </li>\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Administrador','Cliente', 'Especialista', 'Recepcionista']\" \n          routerLinkActive=\"active\" routerLink=\"DentistShiftViewer\">Información</a>\n      </li>\n     <li class=\"nav-item\">\n        <a class=\"nav-link\" *appTypeValidator=\"['Administrador']\" \n          routerLinkActive=\"active\" routerLink=\"Statistics\">Estadisticas</a>\n      </li>      \n    </ul>\n    <ul class=\"nav navbar-nav navbar-right\">\n      <span class=\"navbar-text\" *appTypeValidator=\"['Administrador','Cliente', 'Especialista', 'Recepcionista']\"> <i class=\"far fa-id-card\"></i> {{email}} - {{firstName}} - {{type}}</span>\n      <!--<li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"Login\"><i class=\"fas fa-sign-in-alt\"></i>Loguearse</a></li>-->\n      <li class=\"nav-item\"><a class=\"nav-link\" *appTypeValidator=\"['Administrador','Cliente', 'Especialista', 'Recepcionista']\"  (click)=\"logout()\">Salir</a></li>\n    </ul>\n</div>\n</nav>\n<br>\n<br>"
 
 /***/ }),
 
@@ -550,6 +625,11 @@ let NavbarComponent = class NavbarComponent {
         this.authService = authService;
         this.router = router;
         const token = localStorage.getItem('token');
+        if (token == null) {
+            this.email = '';
+            this.type = '';
+            this.firstName = '';
+        }
         if (token != null) {
             const tokenInfo = JSON.parse(token);
             this.email = tokenInfo['email'];
@@ -560,7 +640,8 @@ let NavbarComponent = class NavbarComponent {
     ngOnInit() {
     }
     logout() {
-        this.authService.logout();
+        localStorage.removeItem('token');
+        //this.authService.logout();
         this.router.navigate(['/Login']);
     }
 };
@@ -595,7 +676,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"form\" class=\"card text-white bg-primary mb-3\">\n   <div class=\"form-group\">\n     <label>DNI</label>\n     <input type=\"text\" formControlName=\"dni\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }\" required>\n    <div *ngIf=\"form.controls['dni'].touched && form.controls['dni'].invalid\">Error, debe ingresar un DNI válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>E-mail</label>\n     <input type=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['email'].touched && form.controls['email'].invalid }\" required>\n     <div *ngIf=\"form.controls['email'].touched && form.controls['email'].invalid\">Error, debe ingresar un E-mail válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Clave</label>\n     <input type=\"password\" class=\"form-control\" formControlName=\"password\" [ngClass]=\"{ 'is-invalid': form.controls['password'].touched && form.controls['password'].invalid }\" required>\n     <div *ngIf=\"form.controls['password'].touched && form.controls['password'].invalid\">Error, debe ingresar una clave válida! (mínimo 6 dígitos)</div>\n   </div>  \n   <div class=\"form-group\">\n     <label>Nombre</label>\n     <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['firstName'].touched && form.controls['firstName'].invalid }\" required>\n     <div *ngIf=\"form.controls['firstName'].touched && form.controls['firstName'].invalid\">Error, debe ingresar un nombre válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Apellido</label>\n     <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['lastName'].touched && form.controls['lastName'].invalid }\" required>\n     <div *ngIf=\"form.controls['lastName'].touched && form.controls['lastName'].invalid\">Error, debe ingresar un apellido válido!</div>\n  </div>\n  <div class=\"form-group\">\n     <label>Tipo</label>\n     <select formControlName=\"type\" class=\"form-control\" required>\n      <option value=\"Administrador\">Administrador</option>\n     <option value=\"Cliente\">Cliente</option>\n     <option value=\"Especialista\">Especialista</option>\n     <option value=\"Recepcionista\">Recepcionista</option>\n     </select> \n     <!-- <input type=\"text\" formControlName=\"type\" class=\"form-control\" required> -->\n  </div>\n  <div class=\"form-group\">\n     <label>Archivo</label><br>\n     <input type=\"file\" formControlName=\"file\" accept=\"image/*\" (change)=\"onFileChange($event)\" required>\n  </div>\n  <div class=\"form-group\">\n   <label>Captcha</label>\n   <ngx-recaptcha2 formControlName=\"recaptcha\" #captchaElem [siteKey]=\"'6LfOWEwUAAAAADnvwUXuRX7Z37k6PWatdong9Zs4'\" [useGlobalDomain]=\"false\"></ngx-recaptcha2>\n   </div>\n\n  <small *ngIf=\"error\" class=\"\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n  <!-- <small *ngIf=\"success\" class=\"\"><i class=\"fas fa-check\"></i> Usuario creado con éxito! </small> -->\n  <button type=\"submit\" (click)=\"tryRegister()\" class=\"btn btn-success\">Register</button>\n</form>"
+module.exports = "<app-spinner></app-spinner>\n<form [formGroup]=\"form\" class=\"card text-white bg-primary mb-3\">\n   <div class=\"form-group\">\n     <label>DNI</label>\n     <input type=\"text\" formControlName=\"dni\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['dni'].touched && form.controls['dni'].invalid }\" required>\n    <div *ngIf=\"form.controls['dni'].touched && form.controls['dni'].invalid\">Error, debe ingresar un DNI válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>E-mail</label>\n     <input type=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['email'].touched && form.controls['email'].invalid }\" required>\n     <div *ngIf=\"form.controls['email'].touched && form.controls['email'].invalid\">Error, debe ingresar un E-mail válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Clave</label>\n     <input type=\"password\" class=\"form-control\" formControlName=\"password\" [ngClass]=\"{ 'is-invalid': form.controls['password'].touched && form.controls['password'].invalid }\" required>\n     <div *ngIf=\"form.controls['password'].touched && form.controls['password'].invalid\">Error, debe ingresar una clave válida! (mínimo 6 dígitos)</div>\n   </div>  \n   <div class=\"form-group\">\n     <label>Nombre</label>\n     <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['firstName'].touched && form.controls['firstName'].invalid }\" required>\n     <div *ngIf=\"form.controls['firstName'].touched && form.controls['firstName'].invalid\">Error, debe ingresar un nombre válido!</div>\n   </div>\n   <div class=\"form-group\">\n     <label>Apellido</label>\n     <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': form.controls['lastName'].touched && form.controls['lastName'].invalid }\" required>\n     <div *ngIf=\"form.controls['lastName'].touched && form.controls['lastName'].invalid\">Error, debe ingresar un apellido válido!</div>\n  </div>\n  <div class=\"form-group\">\n     <label>Tipo</label>\n     <select formControlName=\"type\" class=\"form-control\" required>\n      <option value=\"Administrador\">Administrador</option>\n     <option value=\"Cliente\">Cliente</option>\n     <option value=\"Especialista\">Especialista</option>\n     <option value=\"Recepcionista\">Recepcionista</option>\n     </select> \n     <!-- <input type=\"text\" formControlName=\"type\" class=\"form-control\" required> -->\n  </div>\n  <div class=\"form-group\">\n     <label>Archivo</label><br>\n     <input type=\"file\" formControlName=\"file\" accept=\"image/png\" (change)=\"onFileChange($event)\" required>\n  </div>\n  <div class=\"form-group\">\n   <label>Captcha</label>\n   <ngx-recaptcha2 formControlName=\"recaptcha\" #captchaElem [siteKey]=\"'6LcbTK0UAAAAAJ6n4S1FE4rV9p4piRQ6yZrbjDyn'\" [useGlobalDomain]=\"false\"></ngx-recaptcha2>\n   </div>\n\n  <small *ngIf=\"error\" class=\"\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n  <!-- <small *ngIf=\"success\" class=\"\"><i class=\"fas fa-check\"></i> Usuario creado con éxito! </small> -->\n  <button type=\"submit\" (click)=\"tryRegister()\" class=\"btn btn-success\">Register</button>\n</form>"
 
 /***/ }),
 
@@ -752,6 +833,209 @@ SpinnerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/Components/statistics/statistics.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/Components/statistics/statistics.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudHMvc3RhdGlzdGljcy9zdGF0aXN0aWNzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/Components/statistics/statistics.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/Components/statistics/statistics.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-spinner></app-spinner>\n<div id=\"chartContainer1\" style=\"height: 370px; width: 100%;\"></div>\n<div id=\"chartContainer2\" style=\"height: 370px; width: 100%; margin-left:auto;margin-right:auto;\"></div>\n<div id=\"chartContainer3\" style=\"height: 370px; width: 100%; margin-left:auto;margin-right:auto;\"></div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/Components/statistics/statistics.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/Components/statistics/statistics.component.ts ***!
+  \***************************************************************/
+/*! exports provided: StatisticsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticsComponent", function() { return StatisticsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _Services_dentist_shift_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Services/dentist-shift.service */ "./src/app/Services/dentist-shift.service.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! canvasjs/canvasjs.min */ "./node_modules/canvasjs/canvasjs.min.js");
+/* harmony import */ var canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+let StatisticsComponent = class StatisticsComponent {
+    constructor(dentistShift, fireStore) {
+        /*this.dentistShiftList = dentistShift.returnAll();
+    
+        console.log(this.dentistShiftList.length);
+    
+        //this.count = dentistShift.count();
+    
+        console.log(this.fireStore.collection('dentistShifts').snapshotChanges.length);
+    
+        console.log(this.fireStore.collection('dentistShifts').snapshotChanges().subscribe(
+            res =>{res.toString()}));
+    
+    
+        this.fireStore.collection('dentistShifts').snapshotChanges().subscribe((res) => {
+                res.forEach(r => {
+                    this.count++;
+                })
+            });
+    
+        console.log(this.count);*/
+        this.dentistShift = dentistShift;
+        this.fireStore = fireStore;
+        this.dentistShiftList = [];
+        this.pedidos = 0;
+        this.atendidos = 0;
+        this.count = 0;
+    }
+    ngOnInit() {
+        this.calculate();
+        this.create1();
+        this.create2();
+        this.create3();
+    }
+    calculate() {
+        let shift;
+        this.fireStore.collection('dentistShifts').snapshotChanges().subscribe((res) => {
+            res.forEach(r => {
+                shift = r.payload.doc.data();
+                this.dentistShiftList.push({
+                    id: r.payload.doc.id,
+                    data: r.payload.doc.data()
+                });
+                if (shift["status"] === "Pedido") {
+                    this.pedidos++;
+                }
+                if (shift["status"] === "Atendido") {
+                    this.atendidos++;
+                }
+                console.log(shift["date"]);
+                console.log(shift["dni"]);
+                console.log(shift["hour"]);
+                console.log(shift["specialist"]);
+                console.log(shift["status"]);
+                this.count++;
+            });
+        });
+    }
+    create1() {
+        let dataPoints = [];
+        let y = 0;
+        for (var i = 0; i < 50; i++) {
+            y += Math.round(5 + Math.random() * (-5 - 5));
+            dataPoints.push({ y: y });
+        }
+        let chart1 = new canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_4__["Chart"]("chartContainer1", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+                text: "Estadisticas de EMPLEADOS"
+            },
+            data: [{
+                    type: "column",
+                    dataPoints: [
+                        { y: this.fireStore.collection('logs').snapshotChanges.length, label: "Ingresos de usuarios el mes de julio" },
+                        { y: this.fireStore.collection('dentistShifts').snapshotChanges.length, label: "Cant turnos p/ especialidad" }
+                    ]
+                }]
+        });
+        chart1.render();
+    }
+    create2() {
+        setTimeout(() => {
+        }, 10000);
+        let dataPoints = [];
+        let dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+        let y = 0;
+        for (var i = 0; i < 6; i++) {
+            y += Math.round(5 + Math.random() * (-5 - 5));
+            if (y > 0) {
+                dataPoints.push({ y: y, name: 'Turnos del día ' + dias[i] });
+            }
+        }
+        let chart2 = new canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_4__["Chart"]("chartContainer2", {
+            theme: "light2",
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+                text: "Estadisticas de TURNOS"
+            },
+            data: [{
+                    type: "pie",
+                    showInLegend: true,
+                    toolTipContent: "<b>{name}</b>: {y} (#percent%)",
+                    indexLabel: "{name} - #percent%",
+                    dataPoints: dataPoints /*[
+                        { y: this.fireStore.collection('dentistShifts').snapshotChanges.length, name: "TURNOS TOTALES" },
+                        { y: this.pedidos, name: "TURNOS PEDIDOS" },
+                        { y: this.atendidos, name: "TURNOS ATENDIDOS" },
+                        { y: this.atendidos, name: "Turnos realizados p/ especialidad" },
+                        { y: this.atendidos, name: "Turnos cancelados p/ especialidad" },
+                        { y: this.atendidos, name: "Turnos cancelados p/ clientes" },
+                        { y: this.atendidos, name: "Turnos cancelados p/ recepcionista" }
+                    ]*/
+                }]
+        });
+        chart2.render();
+    }
+    create3() {
+        let dataPoints = [];
+        let y = 0;
+        for (var i = 0; i < 10; i++) {
+            y += Math.round(5 + Math.random() * (-5 - 5));
+            if (y > 0) {
+                dataPoints.push({ y: y });
+            }
+        }
+        let chart3 = new canvasjs_canvasjs_min__WEBPACK_IMPORTED_MODULE_4__["Chart"]("chartContainer3", {
+            zoomEnabled: true,
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+                text: "Estadisticas de ESPECIALIDADES"
+            },
+            subtitles: [{
+                    text: "Try Zooming and Panning"
+                }],
+            data: [
+                {
+                    type: "line",
+                    dataPoints: dataPoints
+                }
+            ]
+        });
+        chart3.render();
+    }
+};
+StatisticsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-statistics',
+        template: __webpack_require__(/*! ./statistics.component.html */ "./src/app/Components/statistics/statistics.component.html"),
+        styles: [__webpack_require__(/*! ./statistics.component.css */ "./src/app/Components/statistics/statistics.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_Services_dentist_shift_service__WEBPACK_IMPORTED_MODULE_2__["DentistShiftService"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"]])
+], StatisticsComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/Directives/type-validator.directive.ts":
 /*!********************************************************!*\
   !*** ./src/app/Directives/type-validator.directive.ts ***!
@@ -849,10 +1133,16 @@ let AuthGuard = class AuthGuard {
         if (tokenInfo) {
             const userType = tokenInfo['type'];
             console.log("token: ", tokenInfo);
+            console.log(userType);
             this.authService.redirectUrl = '/';
             types.forEach(element => {
+                console.log(element);
+            });
+            types.forEach(element => {
                 if (userType === element) {
+                    console.log("Entra authguard");
                     check = true;
+                    return true;
                 }
             });
         }
@@ -904,7 +1194,8 @@ let AuthService = class AuthService {
         this.fireAuth = fireAuth;
         this.fireStore = fireStore;
         this.router = router;
-        this.mail = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.email = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.user = fireAuth.authState;
     }
     signIn(email, password, type) {
         let usuario;
@@ -914,9 +1205,19 @@ let AuthService = class AuthService {
                     usuario = r.payload.doc.data();
                     if (usuario["email"] == email && usuario["type"] == type) {
                         localStorage.setItem("token", JSON.stringify(usuario));
+                        let now = new Date();
+                        const request = {
+                            email: email,
+                            dni: usuario["dni"],
+                            firstName: usuario["firstName"],
+                            lastName: usuario["lastName"],
+                            type: type,
+                            date: now.toString(),
+                        };
+                        this.fireStore.collection('logs').add(request);
                         console.log("Entro");
-                        this.router.navigate(['/Dashboard']);
                         //location.reload();
+                        this.router.navigate(['/Dashboard']);
                         //this.router.navigate(['/Dashboard']);
                     }
                 });
@@ -939,15 +1240,16 @@ let AuthService = class AuthService {
         });
     }
     logout() {
-        localStorage.removeItem('token');
-        location.reload();
+        localStorage.removeItem("token");
+        this.fireAuth.auth.signOut();
+        //location.reload();
         //this.router.navigate(['/Dashboard']);
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-], AuthService.prototype, "mail", void 0);
+], AuthService.prototype, "email", void 0);
 AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
@@ -1003,6 +1305,7 @@ let DentistShiftService = class DentistShiftService {
                     id: r.payload.doc.id,
                     data: r.payload.doc.data()
                 });
+                console.log(shift["date"]);
             });
         });
         return this.dentistShifts;
@@ -1027,7 +1330,7 @@ let DentistShiftService = class DentistShiftService {
     }
     returnAllBySpecialist(specialist) {
         let shift;
-        this.fireStore.collection('dentistShift').snapshotChanges().subscribe((res) => {
+        this.fireStore.collection('dentistShifts').snapshotChanges().subscribe((res) => {
             res.forEach(r => {
                 shift = r.payload.doc.data();
                 if (shift["specialist"] == specialist) {
@@ -1039,6 +1342,17 @@ let DentistShiftService = class DentistShiftService {
             });
         });
         return this.dentistShifts;
+    }
+    count() {
+        let shift;
+        let count = 0;
+        this.fireStore.collection('dentistShifts').snapshotChanges().subscribe((res) => {
+            res.forEach(r => {
+                shift = r.payload.doc.data();
+                count++;
+            });
+        });
+        return count;
     }
 };
 DentistShiftService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1295,6 +1609,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_dentist_shift_viewer_dentist_shift_viewer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Components/dentist-shift-viewer/dentist-shift-viewer.component */ "./src/app/Components/dentist-shift-viewer/dentist-shift-viewer.component.ts");
 /* harmony import */ var _Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Guards/auth.guard */ "./src/app/Guards/auth.guard.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _Components_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Components/statistics/statistics.component */ "./src/app/Components/statistics/statistics.component.ts");
+
 
 
 
@@ -1307,7 +1623,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //const routes: Routes = [];
 /*const routes: Routes = [
-  { path: '', redirectTo: 'DentistShift', pathMatch: 'full' },
+  { path: '', redirectTo: 'Login', pathMatch: 'full' },
   { path: 'Login', component: LoginComponent },
   { path: 'Register', component: RegisterComponent },
   { path: 'Dashboard', component: DashboardComponent },
@@ -1315,29 +1631,36 @@ __webpack_require__.r(__webpack_exports__);
   { path: 'DentistShiftViewer', component: DentistShiftViewerComponent }
 ];*/
 const routes = [
-    { path: '*', redirectTo: 'Login', pathMatch: 'full' },
     { path: '', redirectTo: 'Login', pathMatch: 'full' },
     { path: 'Dashboard', component: _Components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"],
         canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
-        data: { types: ['Administrador', 'Cliente', 'Especialista', 'Recepcionista'] }
-    },
-    {
-        path: 'Register',
-        component: _Components_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"],
-        canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
-        data: { types: ['Administrador'] }
-    },
-    {
-        path: 'DentistShift',
-        component: _Components_dentist_shift_dentist_shift_component__WEBPACK_IMPORTED_MODULE_6__["DentistShiftComponent"],
-        canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
-        data: { types: ['Recepcionista', 'Cliente'] }
-    },
-    {
-        path: 'DentistShiftViewer',
-        component: _Components_dentist_shift_viewer_dentist_shift_viewer_component__WEBPACK_IMPORTED_MODULE_7__["DentistShiftViewerComponent"],
-        canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
-        data: { types: ['Administrador', 'Cliente', 'Especialista', 'Recepcionista'] }
+        data: { types: ['Administrador', 'Cliente', 'Especialista', 'Recepcionista'] },
+        children: [
+            {
+                path: 'Register',
+                component: _Components_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"],
+                canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
+                data: { types: ['Administrador'] }
+            },
+            {
+                path: 'DentistShift',
+                component: _Components_dentist_shift_dentist_shift_component__WEBPACK_IMPORTED_MODULE_6__["DentistShiftComponent"],
+                canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
+                data: { types: ['Recepcionista', 'Cliente'] }
+            },
+            {
+                path: 'DentistShiftViewer',
+                component: _Components_dentist_shift_viewer_dentist_shift_viewer_component__WEBPACK_IMPORTED_MODULE_7__["DentistShiftViewerComponent"],
+                canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
+                data: { types: ['Administrador', 'Cliente', 'Especialista', 'Recepcionista'] }
+            },
+            {
+                path: 'Statistics',
+                component: _Components_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_10__["StatisticsComponent"],
+                canActivate: [_Guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]],
+                data: { types: ['Administrador'] }
+            }
+        ]
     },
     { path: 'Login', component: _Components_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] }
 ];
@@ -1346,7 +1669,7 @@ let AppRoutingModule = class AppRoutingModule {
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })
 ], AppRoutingModule);
@@ -1373,7 +1696,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<app-spinner></app-spinner>\n<router-outlet></router-outlet>"
+module.exports = "<app-spinner></app-spinner>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1440,6 +1763,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm2015/ngx-spinner.js");
 /* harmony import */ var ngx_captcha__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ngx-captcha */ "./node_modules/ngx-captcha/fesm2015/ngx-captcha.js");
 /* harmony import */ var _Directives_type_validator_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Directives/type-validator.directive */ "./src/app/Directives/type-validator.directive.ts");
+/* harmony import */ var _Components_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Components/statistics/statistics.component */ "./src/app/Components/statistics/statistics.component.ts");
+/* harmony import */ var _Components_log_log_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Components/log/log.component */ "./src/app/Components/log/log.component.ts");
 
 
 
@@ -1451,6 +1776,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+
 
 
 
@@ -1476,7 +1803,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _Components_dentist_shift_dentist_shift_component__WEBPACK_IMPORTED_MODULE_15__["DentistShiftComponent"],
             _Components_dentist_shift_viewer_dentist_shift_viewer_component__WEBPACK_IMPORTED_MODULE_16__["DentistShiftViewerComponent"],
             _Components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_18__["SpinnerComponent"],
-            _Directives_type_validator_directive__WEBPACK_IMPORTED_MODULE_21__["TypeValidatorDirective"]
+            _Directives_type_validator_directive__WEBPACK_IMPORTED_MODULE_21__["TypeValidatorDirective"],
+            _Components_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_22__["StatisticsComponent"],
+            _Components_log_log_component__WEBPACK_IMPORTED_MODULE_23__["LogComponent"],
+            _Components_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_22__["StatisticsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
