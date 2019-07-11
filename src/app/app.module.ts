@@ -17,7 +17,14 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.component';
-
+import { DentistShiftViewerComponent } from './Components/dentist-shift-viewer/dentist-shift-viewer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SpinnerComponent } from './Components/spinner/spinner.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { TypeValidatorDirective } from './Directives/type-validator.directive';
+import { StatisticsComponent } from './Components/statistics/statistics.component';
+import { LogComponent } from './Components/log/log.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,12 @@ import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.
     DashboardComponent,
     NavbarComponent,
     RegisterComponent,
-    DentistShiftComponent
+    DentistShiftComponent,
+    DentistShiftViewerComponent,
+    SpinnerComponent,
+    TypeValidatorDirective,
+    StatisticsComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +48,10 @@ import { DentistShiftComponent } from './Components/dentist-shift/dentist-shift.
     AngularFireStorageModule,
   	AngularFireAuthModule, // Imports firebase/auth, only needed for auth features
   	FormsModule,
-  	ReactiveFormsModule
+  	ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    NgbModule.forRoot(),
+    NgxSpinnerModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

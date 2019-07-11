@@ -1,0 +1,152 @@
+<app-spinner></app-spinner>
+<table appPanel class="table table-sm table-hover table-primary table-striped">
+  <thead>
+    <tr>
+      <th class="text-center" colspan="7"><b>Lista de turnos</b></th>
+    </tr>
+    <tr>
+      <th>Código</th>
+      <th>DNI</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Especialista</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+	<tr *ngFor="let dentistShift of dentistShiftList">
+	<td>{{dentistShift.id}}</td>
+	<td>{{dentistShift.data.dni}}</td>
+	<td>{{dentistShift.data.date}}</td>
+	<td>{{dentistShift.data.hour}}</td>
+	<td>{{dentistShift.data.specialist}}</td>
+	<td>{{dentistShift.data.status}}</td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Recepcionista']" (click)="cancel(dentistShift.id)">Cancelar turno</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Especialista']" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Atender turno</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Especialista']" (click)="openModal1(dentistShift.id)">Enviar reseña</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Cliente']" (click)="viewReview(dentistShift.id)">Ver reseña</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Cliente']" (click)="openModal2(dentistShift.data.dni)">Realizar encuesta</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<button class="btn btn-primary" (click)="openModal()">Test</button>
+
+<ng-template #modalMensaje let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Reseña</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p> <span>Descripción:</span></p>
+       	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark">Enviar</button>
+
+    </div>
+</ng-template>-->
+
+<ng-template #modal1 let-modal class="card text-white bg-primary mb-3">
+	
+	<app-spinner></app-spinner>
+
+	<div class="card text-white bg-primary mb-3">
+
+	<form [formGroup]="form1" class="card text-white bg-primary mb-3">
+	
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Reseña</span>
+        </h4>
+    
+        <button type="button" class="close" aria-label="Close" (click)="closeModal1()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
+    </div>
+
+
+    <div class="modal-body">
+    	<p> <span>Código de turno:</span></p>
+    	<input type="text" class="form-control" formControlName="code" [(ngModel)]="id" readonly>
+    	<br>
+        <p> <span>Descripción:</span></p>
+       	<textarea class="form-control" formControlName="descReview" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" (click)="tryReview()" class="btn btn-success">Enviar</button>
+    </div>
+    </form>
+    
+    </div>
+	
+</ng-template>
+
+<ng-template #review let-modal class="card text-white bg-primary mb-3">
+	
+	<app-spinner></app-spinner>
+
+	<div class="card text-white bg-primary mb-3">
+
+
+	
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Reseña</span>
+        </h4>
+    
+        <button type="button" class="close" aria-label="Close" (click)="closeReview()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
+    </div>
+
+	<div ngFor="let review of reviews">
+		{{review.data.code}}
+		{{review.data.desc}}
+	</div>
+
+    
+    </div>
+	
+</ng-template>
+
+<ng-template #modal2 let-modal class="card text-white bg-primary mb-3">
+	
+	<app-spinner></app-spinner>
+
+	<div class="card text-white bg-primary mb-3">
+
+	<form [formGroup]="form2" class="card text-white bg-primary mb-3">
+ 
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Encuesta</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal2()">
+            <span aria-hidden="true" >&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+    	<p> <span>DNI:</span></p>
+    	<input type="text" class="form-control" formControlName="dni" [(ngModel)]="dni" readonly>
+    	<br>
+    	<p> <span>Calificación clínica:</span></p>
+    	<input type="text" class="form-control" formControlName="clinic">
+    	<br>
+    	<p> <span>Calificación especialista:</span></p>
+    	<input type="text" class="form-control" formControlName="specialist">
+    	<br>
+        <p> <span>Descripción:</span></p>
+       	<textarea class="form-control" formControlName="descPoll" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" (click)="tryPoll()" class="btn btn-success">Enviar</button>
+    </div>
+	</form>
+    </div>
+</ng-template>
+

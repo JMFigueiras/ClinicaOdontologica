@@ -5,25 +5,30 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+   <ul class="navbar-nav mr-auto">
+     <li class="nav-item">
+        <a class="nav-link" *appTypeValidator="['Administrador']" 
+          routerLinkActive="active" routerLink="Register">Registrar</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+     <li class="nav-item">
+        <a class="nav-link" *appTypeValidator="['Recepcionista', 'Cliente']" 
+          routerLinkActive="active" routerLink="DentistShift">Pedir un turno</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+     <li class="nav-item">
+        <a class="nav-link" *appTypeValidator="['Administrador','Cliente', 'Especialista', 'Recepcionista']" 
+          routerLinkActive="active" routerLink="DentistShiftViewer">Información</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
+     <li class="nav-item">
+        <a class="nav-link" *appTypeValidator="['Administrador']" 
+          routerLinkActive="active" routerLink="Statistics">Estadisticas</a>
+      </li>      
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" placeholder="Search" type="text">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+    <ul class="nav navbar-nav navbar-right">
+      <span class="navbar-text" *appTypeValidator="['Administrador','Cliente', 'Especialista', 'Recepcionista']"> <i class="far fa-id-card"></i> {{email}} - {{firstName}} - {{type}}</span>
+      <!--<li class="nav-item"><a class="nav-link" routerLink="Login"><i class="fas fa-sign-in-alt"></i>Loguearse</a></li>-->
+      <li class="nav-item"><a class="nav-link" *appTypeValidator="['Administrador','Cliente', 'Especialista', 'Recepcionista']"  (click)="logout()">Salir</a></li>
+    </ul>
+</div>
 </nav>
 <br>
 <br>

@@ -29,6 +29,6 @@ export class UserService {
 
 	    console.log(this.fireStorage.upload(dni, file));
 
-	    return this.fireStore.collection('users').add(request) ;
+	    return this.fireStore.collection('users').add(request);
 	}
 }

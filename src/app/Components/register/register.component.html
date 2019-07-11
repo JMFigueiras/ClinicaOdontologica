@@ -1,3 +1,4 @@
+<app-spinner></app-spinner>
 <form [formGroup]="form" class="card text-white bg-primary mb-3">
    <div class="form-group">
      <label>DNI</label>
@@ -27,6 +28,7 @@
   <div class="form-group">
      <label>Tipo</label>
      <select formControlName="type" class="form-control" required>
+      <option value="Administrador">Administrador</option>
      <option value="Cliente">Cliente</option>
      <option value="Especialista">Especialista</option>
      <option value="Recepcionista">Recepcionista</option>
@@ -35,8 +37,12 @@
   </div>
   <div class="form-group">
      <label>Archivo</label><br>
-     <input type="file" formControlName="file" accept="image/*" (change)="onFileChange($event)" required>
+     <input type="file" formControlName="file" accept="image/png" (change)="onFileChange($event)" required>
   </div>
+  <div class="form-group">
+   <label>Captcha</label>
+   <ngx-recaptcha2 formControlName="recaptcha" #captchaElem [siteKey]="'6LfOWEwUAAAAADnvwUXuRX7Z37k6PWatdong9Zs4'" [useGlobalDomain]="false"></ngx-recaptcha2>
+   </div>
 
   <small *ngIf="error" class=""><i class="fa fa-times"></i> {{errorMessage}} </small>
   <!-- <small *ngIf="success" class=""><i class="fas fa-check"></i> Usuario creado con éxito! </small> -->

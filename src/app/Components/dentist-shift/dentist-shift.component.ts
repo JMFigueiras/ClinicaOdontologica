@@ -12,16 +12,19 @@ import { User } from './../../Entities/user';
 })
 export class DentistShiftComponent implements OnInit {
 
-	public form: FormGroup;
+	  public form: FormGroup;
 
-	public dentistList = [];
+	  public dentistList = [];
 
-  public errorMessage: string;
-  public error: boolean;
-  public success: boolean;
+    public errorMessage: string;
+    public error: boolean;
+    public success: boolean;
 
   	constructor(public formBuilder: FormBuilder, public dentist: DentistService, public dentistShift: DentistShiftService) {
-      this.resetForm();
+      
+      let user = JSON.parse(localStorage.getItem('token'));
+
+      this.resetForm(user.dni);
 
       this.errorMessage = '';
       this.error = false;
@@ -30,9 +33,9 @@ export class DentistShiftComponent implements OnInit {
       this.dentistList = this.dentist.returnAll();
   	}
 
-    resetForm(){
+    resetForm(dni: string){
       this.form = this.formBuilder.group({
-        dni: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(8), Validators.maxLength(8)]],
+        dni: [dni, [Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(8), Validators.maxLength(8)]],
         date: ['', Validators.required],
         hour: ['', Validators.required],
         lastName: ['', Validators.required]
@@ -45,6 +48,8 @@ export class DentistShiftComponent implements OnInit {
 
     public tryDentistShift(){
 
+      console.log(this.form.valid);
+
     if (this.form.valid) {
         const dni: string = this.form.get('dni').value;
         const date: string = this.form.get('date').value;
@@ -55,7 +60,8 @@ export class DentistShiftComponent implements OnInit {
         .then(
           response => {
                     this.success = true;
-                    this.resetForm();
+                    this.resetForm(dni);
+                    location.reload();
                 }
             )
             .catch(

@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
   		  type: ['Cliente', [Validators.required]],
+        recaptcha: [''],
         loader: ['Cliente', [Validators.required]]
       });
 
@@ -38,23 +39,23 @@ export class LoginComponent implements OnInit {
 
       switch(type){
         case 'Administrador':
-        user = { email: 'administrador@gmail.com', password: '123456', type: 'Administrador', loader: 'Administrador' };
+        user = { email: 'administrador@gmail.com', password: '123456', type: 'Administrador', recaptcha: '', loader: 'Administrador' };
         this.form.setValue(user);
         break;
         case 'Especialista':
-        user = { email: 'especialista@gmail.com', password: '123456', type: 'Especialista', loader: 'Especialista' };
+        user = { email: 'especialista@gmail.com', password: '123456', type: 'Especialista', recaptcha: '', loader: 'Especialista' };
         this.form.setValue(user);
         break;
         case 'Recepcionista':
-        user = { email: 'recepcionista@gmail.com', password: '123456', type: 'Recepcionista', loader: 'Recepcionista' };
+        user = { email: 'recepcionista@gmail.com', password: '123456', type: 'Recepcionista', recaptcha: '', loader: 'Recepcionista' };
         this.form.setValue(user);
         break;
         case 'Cliente':
-        user = { email: 'cliente@gmail.com', password: '123456', type: 'Cliente', loader: 'Cliente' };
+        user = { email: 'cliente@gmail.com', password: '123456', type: 'Cliente', recaptcha: '', loader: 'Cliente' };
         this.form.setValue(user);
         break;
         default:
-        user = { email: '', password: '', type: 'Cliente', loader: 'Cliente' };
+        user = { email: '', password: '', type: 'Cliente', recaptcha: '', loader: 'Cliente' };
         break;
       }
 
