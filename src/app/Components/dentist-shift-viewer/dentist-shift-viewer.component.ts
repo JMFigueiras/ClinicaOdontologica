@@ -7,6 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from "jquery";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from "ngx-spinner";
+import * as CanvasJS from 'canvasjs/canvasjs.min';
 
 @Component({
   selector: 'app-dentist-shift-viewer',
@@ -18,16 +19,22 @@ export class DentistShiftViewerComponent implements OnInit {
   @ViewChild('modal1',{static: true}) modal1: ElementRef;
   @ViewChild('modal2',{static: true}) modal2: ElementRef;
 
+  @ViewChild('review',{static: true}) review: ElementRef;
+
   @Input() public id;
   @Input() public dni;
 
   public modalReference1: any = null;
   public modalReference2: any = null;
+  public reviewReference: any = null;
+
 
   public form1: FormGroup;
   public form2: FormGroup;
 
   public dentistShiftList = [];
+
+  public reviews = [];
 
   public user;
 
@@ -49,6 +56,9 @@ export class DentistShiftViewerComponent implements OnInit {
   	else if(this.user.type == "Cliente"){
   		console.log(this.user.dni);
     	this.dentistShiftList = dentistShift.returnAllByDNI(this.user.dni);
+  	}
+  	else{
+  		this.dentistShiftList = dentistShift.returnAll();
   	}
 
   	this.form1 = this.formBuilder1.group({
@@ -146,6 +156,17 @@ export class DentistShiftViewerComponent implements OnInit {
   	}
   }
 
+  public viewReview(id: string){
+
+  	this.reviewReference = this.modalService.open(this.review);
+
+  	this.reviews = this.reviewService.returnById(id);
+  }
+
+  public closeReview(){
+  	this.reviewReference.close();
+  }
+
   public tryPoll(){
 
   	console.log(this.form2.valid);
@@ -159,5 +180,6 @@ export class DentistShiftViewerComponent implements OnInit {
 		this.pollService.pollRegister(dni, clinic, specialist, desc);
   	}
   }
+
 
 }

@@ -39,7 +39,9 @@ export class DentistShiftService {
 					this.dentistShifts.push({
 	                	id: r.payload.doc.id,
 	                	data: r.payload.doc.data()
-	              	});              
+	              	});
+
+	              	console.log(shift["date"]);              
 			})
 		});
 
@@ -80,7 +82,7 @@ export class DentistShiftService {
 
   		let shift
 
-		this.fireStore.collection('dentistShift').snapshotChanges().subscribe((res) => {
+		this.fireStore.collection('dentistShifts').snapshotChanges().subscribe((res) => {
 			res.forEach(r => {
 				shift = r.payload.doc.data();
 
@@ -97,6 +99,24 @@ export class DentistShiftService {
 		});
 
 		return this.dentistShifts;
+  	}
+
+
+  	public count() {
+
+  		let shift;
+
+  		let count = 0;
+
+		this.fireStore.collection('dentistShifts').snapshotChanges().subscribe((res) => {
+			res.forEach(r => {
+				shift = r.payload.doc.data();
+
+				count++;              
+			})
+		});
+
+		return count;
   	}
 
     	/*public userRegister(dni: string, email: string, password: string, firstName: string, lastName: string, type: string, file: any): Promise<Object> {

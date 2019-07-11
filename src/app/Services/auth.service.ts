@@ -10,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-	@Output() mail = new EventEmitter<String>();
+	@Output() email = new EventEmitter<String>();
 
-	constructor(public fireAuth: AngularFireAuth, public fireStore: AngularFirestore, public router: Router) {}
+	redirectUrl: string;
+
+	user: Observable<firebase.User>;
+
+	constructor(public fireAuth: AngularFireAuth, public fireStore: AngularFirestore, public router: Router) {
+		this.user = fireAuth.authState;
+	}
 
 	signIn(email: string, password: string, type: string) {
 		let usuario;
@@ -24,7 +30,14 @@ export class AuthService {
 					if (usuario["email"] == email && usuario["type"] == type) {
 						localStorage.setItem("token", JSON.stringify(usuario));
 						console.log("Entro");
+
+						//location.reload();
+
 						this.router.navigate(['/Dashboard']);
+						
+						//this.router.navigate(['/Dashboard']);
+
+						
 					}
 				})
 			});
@@ -46,5 +59,12 @@ export class AuthService {
 	      .catch(err => {
 	        console.log('Error, algo fallo!',err.message);
 	      });    
+	}
+
+	logout() {
+    	localStorage.removeItem("token");
+    	this.fireAuth.auth.signOut();
+    	//location.reload();
+    	//this.router.navigate(['/Dashboard']);
 	}
 }

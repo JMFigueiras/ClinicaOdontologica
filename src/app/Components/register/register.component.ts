@@ -37,7 +37,8 @@ export class RegisterComponent implements OnInit {
   			firstName: ['', [Validators.required]],
   			lastName: ['', [Validators.required]],
   			type: ['Cliente', [Validators.required]],
-  			file: ['', [Validators.required, Validators.nullValidator]]
+  			file: ['', [Validators.required, Validators.nullValidator]],
+        recaptcha: ['']
   		});
 	}
 

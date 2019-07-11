@@ -22,6 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { TypeValidatorDirective } from './Directives/type-validator.directive';
+import { StatisticsComponent } from './Components/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     RegisterComponent,
     DentistShiftComponent,
     DentistShiftViewerComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TypeValidatorDirective,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
