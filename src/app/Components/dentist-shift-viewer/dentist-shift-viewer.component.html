@@ -103,13 +103,15 @@
             <span aria-hidden="true" >&times;</span>
         </button>
     </div>
-
-	<div ngFor="let review of reviews">
-		{{review.data.code}}
-		{{review.data.desc}}
-	</div>
-
     
+    <div class="modal-body" *ngFor="let review of reviews">
+        <p> <span>Código de turno:</span></p>
+        <p>{{review.data.code}}</p>
+        <br>
+        <p> <span>Descripción:</span></p>
+        <textarea class="form-control" rows="3" readonly>{{review.data.desc}}</textarea>
+    </div>
+ 
     </div>
 	
 </ng-template>

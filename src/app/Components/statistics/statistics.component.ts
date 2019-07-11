@@ -53,9 +53,11 @@ export class StatisticsComponent implements OnInit {
   	this.calculate();
 
   	
-   	this.create();
+   	this.create1();
+
    	this.create2();
-  	
+
+   	this.create3();
   }
 
   public calculate(){
@@ -90,14 +92,40 @@ export class StatisticsComponent implements OnInit {
 
   }
 
-  public create(){
+  public create1(){
+  	let chart1 = new CanvasJS.Chart("chartContainer1", {
+		animationEnabled: true,
+		exportEnabled: true,
+		title: {
+			text: "Estadisticas de EMPLEADOS"
+		},
+		data: [{
+			type: "column",
+			dataPoints: [
+				{ y: 71, label: "Apple" },
+				{ y: 55, label: "Mango" },
+				{ y: 50, label: "Orange" },
+				{ y: 65, label: "Banana" },
+				{ y: 95, label: "Pineapple" },
+				{ y: 68, label: "Pears" },
+				{ y: 28, label: "Grapes" },
+				{ y: 34, label: "Lychee" },
+				{ y: 14, label: "Jackfruit" }
+			]
+		}]
+	});
+		
+	chart1.render();
+  }
+
+  public create2(){
 
 
    	setTimeout(() => {
 
     }, 10000);
 
-	let chart = new CanvasJS.Chart("chartContainer", {
+	let chart2 = new CanvasJS.Chart("chartContainer2", {
 		theme: "light2",
 		animationEnabled: true,
 		exportEnabled: true,
@@ -117,33 +145,36 @@ export class StatisticsComponent implements OnInit {
 		}]
 	});
 		
-	chart.render();
+	chart2.render();
   }
 
-  public create2(){
-  	let chart2 = new CanvasJS.Chart("chartContainer2", {
+  public create3(){
+	let dataPoints = [];
+	let y = 0;		
+	for ( var i = 0; i < 10000; i++ ) {		  
+		y += Math.round(5 + Math.random() * (-5 - 5));	
+		dataPoints.push({ y: y});
+	}
+	let chart3 = new CanvasJS.Chart("chartContainer3", {
+		zoomEnabled: true,
 		animationEnabled: true,
 		exportEnabled: true,
 		title: {
-			text: "Basic Column Chart in Angular"
+			text: "Estadisticas de ESPECIALIDADES"
 		},
-		data: [{
-			type: "column",
-			dataPoints: [
-				{ y: 71, label: "Apple" },
-				{ y: 55, label: "Mango" },
-				{ y: 50, label: "Orange" },
-				{ y: 65, label: "Banana" },
-				{ y: 95, label: "Pineapple" },
-				{ y: 68, label: "Pears" },
-				{ y: 28, label: "Grapes" },
-				{ y: 34, label: "Lychee" },
-				{ y: 14, label: "Jackfruit" }
-			]
+		subtitles:[{
+			text: "Try Zooming and Panning"
+		}],
+		data: [
+		{
+			type: "line",                
+			dataPoints: dataPoints
 		}]
 	});
 		
-	chart2.render();
+	chart3.render();  	
   }
+
+
 
 }

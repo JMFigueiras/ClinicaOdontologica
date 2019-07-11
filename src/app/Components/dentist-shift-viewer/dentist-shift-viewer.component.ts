@@ -160,6 +160,8 @@ export class DentistShiftViewerComponent implements OnInit {
 
   	this.reviewReference = this.modalService.open(this.review);
 
+  	console.log(id);
+
   	this.reviews = this.reviewService.returnById(id);
   }
 
