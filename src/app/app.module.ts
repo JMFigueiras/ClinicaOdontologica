@@ -21,6 +21,7 @@ import { DentistShiftViewerComponent } from './Components/dentist-shift-viewer/d
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   	FormsModule,
   	ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     NgbModule.forRoot(),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
