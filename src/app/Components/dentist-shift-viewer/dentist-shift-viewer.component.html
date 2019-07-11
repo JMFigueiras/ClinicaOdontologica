@@ -21,11 +21,11 @@
 	<td>{{dentistShift.data.hour}}</td>
 	<td>{{dentistShift.data.specialist}}</td>
 	<td>{{dentistShift.data.status}}</td>
-	<td><button class="btn btn-danger" (click)="cancel(dentistShift.id)">Cancelar turno</button></td>
-	<td><button class="btn btn-danger" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Atender turno</button></td>
-	<td><button class="btn btn-danger" (click)="openModal1(dentistShift.id)">Enviar reseña</button></td>
-	<td><button class="btn btn-danger" (click)="viewReview(dentistShift.id)">Ver reseña</button></td>
-	<td><button class="btn btn-danger" (click)="openModal2(dentistShift.data.dni)">Realizar encuesta</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Recepcionista']" (click)="cancel(dentistShift.id)">Cancelar turno</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Especialista']" (click)="attend(dentistShift.id, dentistShift.data.dni, dentistShift.data.date, dentistShift.data.hour, dentistShift.data.specialist)">Atender turno</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Especialista']" (click)="openModal1(dentistShift.id)">Enviar reseña</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Cliente']" (click)="viewReview(dentistShift.id)">Ver reseña</button></td>
+	<td><button class="btn btn-danger" *appTypeValidator="['Cliente']" (click)="openModal2(dentistShift.data.dni)">Realizar encuesta</button></td>
     </tr>
   </tbody>
 </table>

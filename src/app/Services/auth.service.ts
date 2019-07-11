@@ -29,6 +29,20 @@ export class AuthService {
 					usuario = r.payload.doc.data();
 					if (usuario["email"] == email && usuario["type"] == type) {
 						localStorage.setItem("token", JSON.stringify(usuario));
+
+						let now = new Date();
+
+						const request: Object = {
+							email: email,
+							dni: usuario["dni"],
+							firstName: usuario["firstName"],
+							lastName: usuario["lastName"],
+							type: type,
+							date: now.toString(),
+						};
+
+	    				this.fireStore.collection('logs').add(request);
+
 						console.log("Entro");
 
 						//location.reload();

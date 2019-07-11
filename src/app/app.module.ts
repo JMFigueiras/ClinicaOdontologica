@@ -24,6 +24,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { TypeValidatorDirective } from './Directives/type-validator.directive';
 import { StatisticsComponent } from './Components/statistics/statistics.component';
+import { LogComponent } from './Components/log/log.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StatisticsComponent } from './Components/statistics/statistics.componen
     DentistShiftViewerComponent,
     SpinnerComponent,
     TypeValidatorDirective,
-    StatisticsComponent
+    StatisticsComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,

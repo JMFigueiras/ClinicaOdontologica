@@ -1,0 +1,26 @@
+<table appPanel class="table table-sm table-hover table-primary table-striped">
+  <thead>
+    <tr>
+      <th class="text-center" colspan="7"><b>Lista de usuarios conectados recientemente</b></th>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <th>DNI</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha & hora</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+	<tr *ngFor="let log of logs">
+	<td>{{log.data.email}}</td>
+	<td>{{log.data.dni}}</td>
+	<td>{{log.data.firstName}}</td>
+	<td>{{log.data.lastName}}</td>
+	<td>{{log.data.date}}</td>
+	<td><img *ngFor="let i of imgs" src="{{i}}"  height="75" width="75"></td>
+    </tr>
+  </tbody>
+</table>
+
