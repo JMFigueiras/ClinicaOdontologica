@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute) {
 
-  }
+  constructor(public route: ActivatedRoute) {}
+
 
   ngOnInit() {
   }

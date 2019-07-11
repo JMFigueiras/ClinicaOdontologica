@@ -26,6 +26,7 @@ import { TypeValidatorDirective } from './Directives/type-validator.directive';
 import { StatisticsComponent } from './Components/statistics/statistics.component';
 import { LogComponent } from './Components/log/log.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { LogComponent } from './Components/log/log.component';
     SpinnerComponent,
     TypeValidatorDirective,
     StatisticsComponent,
-    LogComponent
+    LogComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

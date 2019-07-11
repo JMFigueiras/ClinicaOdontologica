@@ -13,13 +13,13 @@
     </tr>
   </thead>
   <tbody>
-	<tr *ngFor="let log of logs">
+	<tr *ngFor="let log of logs; let i = index">
 	<td>{{log.data.email}}</td>
 	<td>{{log.data.dni}}</td>
 	<td>{{log.data.firstName}}</td>
 	<td>{{log.data.lastName}}</td>
 	<td>{{log.data.date}}</td>
-	<td><img *ngFor="let i of imgs" src="{{i}}"  height="75" width="75"></td>
+	<td><img src="{{imgs[i]}}"  height="75" width="75"></td>
     </tr>
   </tbody>
 </table>
