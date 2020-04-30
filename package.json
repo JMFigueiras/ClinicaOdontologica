@@ -33,7 +33,7 @@
     "core-js": "^2.5.4",
     "dateformat": "^3.0.3",
     "firebase": "^6.2.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-bootstrap": "^1.6.3",
     "ng2-charts": "^2.3.0",
     "ngx-captcha": "^7.0.0",
